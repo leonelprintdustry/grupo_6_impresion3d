@@ -11,7 +11,7 @@ Apuntamos a que nuestro público en la plataforma sean personas entre 15 a 30 a�
 Una breve descripción de los integrantes del equipo:
 Cristian Salazar: 
 Luis Uguccioni:
-Tomas Quinteros: prueba prueba
+Tomas Quinteros: Mi nombre es Tomas, tengo 18 vivo en villa Giardino, Cordoba
 Leonel Donatini: 
 
 prueba
