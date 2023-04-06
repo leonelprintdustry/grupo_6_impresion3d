@@ -9,7 +9,7 @@ También agregar una breve descripción del público al que apunta el sitio:
 Apuntamos a que nuestro público en la plataforma sean personas entre 15 a 30 años que busquen productos únicos y personalizables que solo se puedan realizar en impresión 3D. Ejemplo productos de gaming.
 
 Una breve descripción de los integrantes del equipo:
-Cristian Salazar: 
+Cristian Salazar: vivo en medellin colombia.
 Luis Uguccioni:
 Tomas Quinteros: Mi nombre es Tomas, tengo 18 vivo en villa Giardino, Cordoba
 Leonel Donatini: 
