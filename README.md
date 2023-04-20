@@ -13,5 +13,5 @@ Cristian Salazar: vivo en medellin colombia.
 Luis Uguccioni: Soy de CABA, trabajo en ua consultora como lider de proyecto, tengo conocimiento de lenguajes orientados a objetos y bases de datos. Me interesa este curso para aprender pruductos y herramientas para desarrollos Web que no sean propietarias.
 Tomas Quinteros: Mi nombre es Tomas, tengo 18 vivo en villa Giardino, Cordoba
 Leonel Donatini: Soy de La Plata, tengo 42 años, dos hijos. Soy Ingeniero Civil, MBA y tengo un master en energías renovables. Mi intención del curso es aprender a programar porque tengo una startup y me ha sido muy difícil el proceso de conseguir que me desarrollen la web hasta que encontre No Code. 
-Rodrigo cabañes:Soy de Caba, tengo 23 años, hago este curso para aprender a programar, y adquirir nuevas experiencias.
+Rodrigo cabañes: Soy de CABA, tengo 23 años, mi intencion es aprender a programar y adquirir nuevas experiencias.
 
