@@ -1,0 +1,19 @@
+
+Colores: 
+
+
+Formatos de Textos: 
+
+     font-family: 'Roboto', sans-serif;
+
+
+Formatos de Botones: 
+
+
+Formatos de imágenes: 
+
+
+Formatos de Footer: 
+
+
+Formato de header: 
