@@ -1,10 +1,14 @@
 
 Colores: 
 
+    Color del header y footer: #0026FA
+    Color de background: #007CFA 
+
 
 Formatos de Textos: 
 
      font-family: 'Roboto', sans-serif;
+     font color:Gris calro #666
 
 
 Formatos de Botones: 

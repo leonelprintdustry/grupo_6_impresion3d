@@ -8,7 +8,13 @@ header {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #Eac926;
+    background-color: #007CFA;
+    color: #ebebeb;
+}
+
+a {
+    color: #ebebeb;
+    text-decoration: none;
 }
 
 main {
@@ -25,6 +31,34 @@ article {
     border-radius: 5%;
 }
 
+@media (min-width: 720px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #0026FA;
+    }   
+}
+
+@media (min-width: 720px) {
+    .main-header-mobile {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 30vw;
+    }
+}
+
+@media (min-width: 720px) {
+    .log-in-nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30vw;
+    }
+}
 
 
 
