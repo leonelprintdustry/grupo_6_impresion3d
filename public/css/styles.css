@@ -4,6 +4,12 @@
 
 header {
     text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: #Eac926;
+    padding-bottom: 20px;
+    width: 100vw;
 }
 
 body {
@@ -20,6 +26,27 @@ a {
 main {
     margin: auto;
     width: 90vw;
+    margin-top: 150px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 15px;
+    background-color: #0026fa;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.fa-solid.fa-credit-card:hover {
+    color: yellow;
+}
+
+.fa-solid.fa-boxes-packing:hover {
+    color: yellow;
+}
+
+.fa-solid.fa-user-shield:hover {
+    color: yellow;
 }
 
 article {
