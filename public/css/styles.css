@@ -42,6 +42,10 @@ main {
     padding-top: 120px;
 }
 
+h3 {
+    padding-left: 10px;
+}
+
 ul {
     list-style: none;
 }
@@ -70,7 +74,8 @@ article {
 
 .img-articulos {
     border-radius: 10px;
-    height: 40vh;
+    height: 200px;
+    width: 200px;
 }
 
 .articulos {
@@ -85,7 +90,8 @@ article:hover {
 
 .precios {
     font-size: 18px;
-    font-weight: bold
+    font-weight: bold;
+    color: black
 }
 
 .descuentos {
@@ -96,6 +102,22 @@ article:hover {
 .descripciones {
     font-size: 16px;
     color: rgb(118, 116, 116);
+}
+
+.fa-solid.fa-truck-fast {
+    border: 2px #39b54a solid;
+    border-radius: 50%;
+    color: #39b54a;
+    margin: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.fa-solid.fa-truck-fast:hover {
+    color: red;
+    border: 2px red solid;
+    transform: scale(1.5);
+    transform: rotate(-0.25turn);
 }
 
 @media (min-width: 720px) {
