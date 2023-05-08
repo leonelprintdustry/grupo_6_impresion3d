@@ -37,6 +37,10 @@ footer {
     padding-bottom: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
 .fa-solid.fa-credit-card:hover {
     color: yellow;
 }
