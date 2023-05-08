@@ -7,7 +7,7 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
-    background-color: #Eac926;
+    background-color: #0026fa;
     padding-bottom: 20px;
     width: 100vw;
 }
@@ -23,10 +23,11 @@ a {
     text-decoration: none;
 }
 
-main {
-    margin: auto;
-    width: 90vw;
-    margin-top: 150px;
+#Basado-en-tu-ultima-visita,#Seccion-de-Ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 footer {
@@ -35,6 +36,10 @@ footer {
     background-color: #0026fa;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+main {
+    padding-top: 120px;
 }
 
 ul {
@@ -60,6 +65,37 @@ article {
     background-color: white;
     text-align: center;
     border-radius: 5%;
+    box-shadow: 10px 10px 10px 0px rgba(204,204,204,1);
+}
+
+.img-articulos {
+    border-radius: 10px;
+    height: 40vh;
+}
+
+.articulos {
+    border-top: 1px solid #ebebeb;
+    text-align: left;
+}
+
+
+article:hover {
+    box-shadow: 10px 10px 10px 0px rgb(121, 120, 120);
+}
+
+.precios {
+    font-size: 18px;
+    font-weight: bold
+}
+
+.descuentos {
+    font-size: 16px;
+    color: #39b54a;
+}
+
+.descripciones {
+    font-size: 16px;
+    color: rgb(118, 116, 116);
 }
 
 @media (min-width: 720px) {
@@ -69,25 +105,25 @@ article {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        background-color: #0026FA;
+        background-color: #0026fa;
     }   
-}
-
-@media (min-width: 720px) {
     .main-header-mobile {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 30vw;
     }
-}
-
-@media (min-width: 720px) {
     .log-in-nav-bar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 30vw;
+    }
+}
+
+@media (max-width: 720px) {
+    main {
+        padding-top: 250px;
     }
 }
 
