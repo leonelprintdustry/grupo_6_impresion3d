@@ -1,7 +1,7 @@
 TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
 Breve descripción de la oferta de productos y/o servicios ofrecidos por su
-sitio: 
+sitio:
 Nuestra plataforma sera una web del tipo marketplace para comercializar productos impresos en impresoras 3D. Los usuarios que deseen vender productos impresos en 3D, suben sus productos a la plataforma y los clientes que los quieran comprar lo podrán hacer por el marketplace. Tendremos tres tipos de usuarios:
 - Un administrador general
 - Un usuario que podrá cargar productos para vender
