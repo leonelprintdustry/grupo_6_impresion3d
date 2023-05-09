@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.create-form{
+    padding: 25px 20px;
+   
+   
+}
+
+.control-formulario{
+    margin-bottom: 15px;
+    text-align: center;
+   
+}
+
+.control-formulario label {
+    margin-bottom: 5px;
+    display:block;
+    text-align: center;
+  
+  }
+
+  .control{
+    
+        width: 60%;
+        padding: 8px;
+        margin-top: 20px;
+        border-radius: 10px;
+        
+        
+   
+    
+  }
+
+  .control[type="reset"],
+  .control[type="submit"]{
+    font-size: 15px;
+    padding: 3px 8px;
+    width: 30%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    color: black;
+  }
+
+  .error{
+    color: red;
+        font-size: 12px;
+        display: none;
+  }
+  .texto{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+  }
+
+  .control:invalid + .error {
+    display: block;
+  }
+
+

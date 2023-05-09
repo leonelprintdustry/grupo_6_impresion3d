@@ -6,6 +6,7 @@ const app = express();
 
 app.use(express.static('public'))
 
+
 app.listen(3020, () => {
     console.log('Servidor corriendo en el puerto 3020')
 });
