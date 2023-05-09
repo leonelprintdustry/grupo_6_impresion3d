@@ -4,6 +4,8 @@ const path = require('path');
 
 const app = express();
 
+const PORT = process.env.PORT || 3020;
+
 app.use(express.static('public'))
 
 app.listen(3020, () => {
