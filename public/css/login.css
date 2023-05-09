@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+.create-form {
+    padding: 20px 15px;
+    
+  }
+
+  
+.login {
+
+    width:50%;
+    border-radius: 5px;
+    margin: 0 auto;
+ 
+}
+
+.loguear {
+    width: 100%;
+    padding: 8px;
+    margin-top: 20px;
+    border-radius: 8%;
+    margin-bottom: 20px;
+    display: block;
+
+  }
+
+  .loguear[type="submit"] {
+    font-size: 15px;
+    padding: 3px 8px;
+    background-color:  #ffffff;
+    color:black;
+  }
+
+  .recordar{
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .texto{
+    font-size: 18px;
+  }
+
