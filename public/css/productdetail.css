@@ -197,4 +197,12 @@ gap: 10px
     }
   
 }
-
+@media (max-width:720px) {
+   
+    .contenedor-main {
+        display: flex;
+        flex-direction: column;
+        width: 80hw;
+    }
+  
+}
