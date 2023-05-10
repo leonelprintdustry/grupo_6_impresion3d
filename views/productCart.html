@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/productcart.css">
+    <link rel="stylesheet" href="/css/styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>Document</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <title>CARRITO</title>
 </head>
 <body>
     <header>
@@ -28,7 +35,7 @@
             <ul class="log-in-nav-bar">
                 <li><a href="/register"> Contáctanos</a></li>
                 <li><a href="/register"> Creá tu Cuenta</a></li>
-                <li><a href="#"> Ingresa</a></li>
+                <li><a href="login"> Ingresa</a></li>
                 <li><a href="productCart"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>   
@@ -37,25 +44,98 @@
 
     <main id="Product-cart">
 
-        <div>
-            // vos trabaja aca lo que esta abajo es como ejemplo despues borralo
-        </div>
 
-            <h3>Basado en tu última visita</h3>
-        <section id="Basado-en-tu-ultima-visita">
-            <article>
-                <img class="img-articulos" src="./images/img-cafetera-moulinex.jpg" alt="Cafetera Moulinex" height="100px">
-                <div class="articulos">
-                    <p><i class="fa-solid fa-truck-fast"></i></p>
-                    <div class="precios-wrapper">
-                        <p class="precios">$6.770</p>
-                        <p class="descuentos">40% OFF</p>
-                    </div>
-                    <p class="descripciones">Cafetera Moulinex</p>
+
+
+
+      
+        
+
+            <body>
+                <div class="container">
+                    <h1>Carrito de Compras</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ARTICULOS</th>
+                               
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
+                                <th>TOTAL</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="./images/productos/imagencamara3d.jpeg " alt="Producto 1" width="50"></td>
+                                
+                                <td>$10</td>
+                                <td>1</td>
+                                <td>$10</td>
+                                <td><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button></td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/productos/iphonecase.jpg" alt="Producto 2" width="50"></td>
+                                
+                                <td>$20</td>
+                                <td>2</td>
+                                <td>$40</td>
+                                <td><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span></button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">TOTAL:</td>
+                                <td>$50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary">METODO DE PAGO</button>
                 </div>
-            </article>
 
-        </section>
+
+
+
+
+                <h2>Datos del usuario</h2>
+        
+        <div class="row mb-3">
+            <div class="col-6">
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu dirección para el envio">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu número de teléfono">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <div class="col-6"></div>
+         </div>   
+	</div>
+
+
+
+
+
+
+
+
+
+
+            </body>
+
+
+
 
     </main>
 
@@ -80,6 +160,10 @@
             <p>¿No te gusta? ¡Devolvelo! No hay nada que no puedas hacer,
                 porque estás siempre protegido.</p>
         </div>
+
+
+
+        
         
     </footer>
 
