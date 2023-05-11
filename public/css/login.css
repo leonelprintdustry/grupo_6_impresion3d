@@ -9,8 +9,9 @@
 .login {
 
     width:50%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 0 auto;
+    padding-top: 10px;
  
 }
 
@@ -18,17 +19,29 @@
     width: 100%;
     padding: 8px;
     margin-top: 20px;
-    border-radius: 8%;
+    border-radius: 5px;
     margin-bottom: 20px;
     display: block;
 
   }
 
-  .loguear[type="submit"] {
+  .login-boton {
     font-size: 15px;
     padding: 3px 8px;
-    background-color:  #ffffff;
     color:black;
+    border-radius: 5px;
+    justify-content: center;
+    position: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .login-boton button {
+    width: 100px;
+  }
+
+  .login-boton button:hover {
+    background-color: rgb(190, 134, 60);
   }
 
   .recordar{
@@ -39,5 +52,6 @@
 
   .texto{
     font-size: 18px;
+    border-radius: 10px;
   }
 

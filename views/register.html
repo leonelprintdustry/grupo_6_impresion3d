@@ -36,68 +36,69 @@
        
     </header>
 
-    
-    <form action="home.html" method="get" class="create-form">
-        <div class="formulario">
-            
+    <main>
+        <form action="home.html" method="get" class="create-form">
+            <div class="formulario">
+                
 
+                <div class="control-formulario">
+                    <label class="texto-nombre">Nombre Completo</label>
+                    <input type="text" name="nombreCompleto"class="control" placeholder="NombreCompleto" id="nombreCompleto" pattern="[a-zA-Z]{1,}" required>
+                    <span class="error">Ingrese un nombre válido</span>            
+            </div>
             <div class="control-formulario">
-                <label class="texto">Nombre Completo</label>
-                <input type="text" name="nombreCompleto"class="control" placeholder="NombreCompleto" id="nombreCompleto" pattern="[a-zA-Z]{1,}" required>
-                <span class="error">Ingrese un nombre válido</span>            
-        </div>
-        <div class="control-formulario">
-            <label class="texto">Nombre de usuario</label>
-            <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{8,}" required>
-            <span class="error">Ingrese un nombre de usuario válido (al menos ocho caracteres)</span>    
-        </div>
-        <div class="control-formulario">
-            <label class="texto">Email</label>
-            <input type="email" name="email" class="control" placeholder="E-mail">
-        </div>
-        <div class="control-formulario">
-            <label class="texto">Fecha De Nacimiento:</label>
-            <input type="date" name="fecha" class="control" placeholder="Fecha de nacimiento">
-        </div>
-        <div class="control-formulario">
-            <label class="texto">Pais de Nacimiento:</label>
-            <select name="Pais" id="Pais" class="control">
-                <option value="Arg">Argentina</option>
-                <option value="Br">Brasil</option>
-                <option value="Bol">Bolivia</option>
-                <option value="Chi">Chile</option>
-                <option value="Col">Colombia</option>
-                <option value="Ecu">Ecuador</option>
-                <option value="Eeuu">Estados Unidos</option>
-                <option value="Par">Paraguay</option>
-                <option value="Per">Peru</option>
-                <option value="Uru">Uruguay</option>
-                <option value="Ven">Venezuela</option>
-            </select>
-        </div>
-
-        <div class="control-formulario">
-            <label class="texto">Contraseña</label>
-            <input type="password" name="contraseña" class="control" placeholder="Contraseña" pattern="[a-zA-Z]{8,}" required>
-            <span class="error">Ingrese una contarseña valida (al menos ocho caracteres)</span>            
-        </div>
-
-
-        <div class="control-formulario">        
-            <label class="texto">Confirmar contraseña:</label>
-            <input type="password" name="Confirmar" class="control" placeholder="Confirmar contraseña">
-        </div>
-        <div class="control-formulario">
-            <label class="texto">Domicilio</label>
-            <input type="text" name="domicilio" class="control" placeholder="Domicilio">
-        </div>
-
-        <div class="control-formulario">
-            <button type="reset" class="control">Borrar</button>
-            <a href="home.html"><button type="submit" class="control">Enviar</button></a>
+                <label class="texto">Nombre de usuario</label>
+                <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{8,}" required>
+                <span class="error">Ingrese un nombre de usuario válido (al menos ocho caracteres)</span>    
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Email</label>
+                <input type="email" name="email" class="control" placeholder="E-mail">
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Fecha De Nacimiento:</label>
+                <input type="date" name="fecha" class="control" placeholder="Fecha de nacimiento">
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Pais de Nacimiento:</label>
+                <select name="Pais" id="Pais" class="control">
+                    <option value="Arg">Argentina</option>
+                    <option value="Br">Brasil</option>
+                    <option value="Bol">Bolivia</option>
+                    <option value="Chi">Chile</option>
+                    <option value="Col">Colombia</option>
+                    <option value="Ecu">Ecuador</option>
+                    <option value="Eeuu">Estados Unidos</option>
+                    <option value="Par">Paraguay</option>
+                    <option value="Per">Peru</option>
+                    <option value="Uru">Uruguay</option>
+                    <option value="Ven">Venezuela</option>
+                </select>
             </div>
 
-        </form>
+            <div class="control-formulario">
+                <label class="texto">Contraseña</label>
+                <input type="password" name="contraseña" class="control" placeholder="Contraseña" pattern="[a-zA-Z]{8,}" required>
+                <span class="error">Ingrese una contarseña valida (al menos ocho caracteres)</span>            
+            </div>
+
+
+            <div class="control-formulario">        
+                <label class="texto">Confirmar contraseña:</label>
+                <input type="password" name="Confirmar" class="control" placeholder="Confirmar contraseña">
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Domicilio</label>
+                <input type="text" name="domicilio" class="control" placeholder="Domicilio">
+            </div>
+
+            <div class="control-formulario">
+                <button type="reset" class="control">Borrar</button>
+                <a href="home.html"><button type="submit" class="control">Enviar</button></a>
+                </div>
+
+            </form>
+    </main>
 
     <footer>
 
