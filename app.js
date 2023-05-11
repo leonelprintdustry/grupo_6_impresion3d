@@ -8,10 +8,7 @@ const PORT = process.env.PORT || 3020;
 
 app.use(express.static('public'))
 
-
-app.listen(3020, () => {
-    console.log('Servidor corriendo en el puerto 3020')
-});
+app.listen(PORT,()=>console.log('servidor corriendo en el puerto'+PORT));
 
 app.get('/index', (req,res) => {
     res.sendFile(path.join(__dirname,'/views/index.html'));
