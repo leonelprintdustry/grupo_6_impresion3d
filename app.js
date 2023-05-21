@@ -10,7 +10,8 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', [
-    path.join(__dirname, './views')
+    path.join(__dirname, './views/users'),
+    path.join(__dirname, './views/products')
 ]);
 
 
@@ -23,7 +24,7 @@ app.use('/auth', authRouter);
 
 
 const PORT = process.env.PORT || 3020;
-app.listen(PORT,()=>console.log('servidor corriendo en el puerto'+PORT));
+app.listen(PORT,()=>console.log('servidor corriendo en el puerto '+ PORT));
 
 
 /*
