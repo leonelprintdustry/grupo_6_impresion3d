@@ -1,38 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css"> 
-    <link rel="stylesheet" href="/css/normalize.css">
+    <%- include('../partials/head') %>
+
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <title>Document</title>
 </head>
 <body>
     <header>
-        <div class="main-header">
-            <div class="main-header-mobile">
-                <img src="./images/Logo-sin-fondo.png" alt="Logo mercadoliebre" height="100px">
-                <form action="/busqueda" method="get" class="busqueda"> 
-                    <div class="search-bar">
-                        <input type="text" value="Buscar productos, marcas, etc" name="nombredelacaja" size="0.4hw" >
-                        <button type="submit" class="boton-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-            </div>
-        </div>
-      
-        <div class="nav-bar">
-            <ul class="log-in-nav-bar">
-                <li><a href="/register"> Contáctanos</a></li>
-                <li><a href="/register"> Creá tu Cuenta</a></li>
-                <li><a href="/login"> Ingresa</a></li>
-                <li><a href="productCart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </div>   
+       
+        <%- include('../partials/header') %>
        
     </header>
 
@@ -101,27 +80,7 @@
     </main>
 
     <footer>
-
-        <div class="tarjeta-credito">
-            <i class="fa-solid fa-credit-card"></i>
-            <h3>Pagá con tarjeta o en efectivo</h3>
-            <p>Paga en cuotas sin interés con tarjeta o efectivo. ¡Y siempre es seguro!</p>
-        </div>
-
-        <div class="envios">
-            <i class="fa-solid fa-boxes-packing"></i>
-            <h3>Envío gratis desde $ 2.500</h3>
-            <p>Solo por estar registrado tenés envíos gratis en miles de
-                productos.</p>
-        </div>
-
-        <div class="shield">
-            <i class="fa-solid fa-user-shield"></i>
-            <h3>Seguridad, de principio a fin</h3>
-            <p>¿No te gusta? ¡Devolvelo! No hay nada que no puedas hacer,
-                porque estás siempre protegido.</p>
-        </div>
-        
+        <%- include('../partials/footer') %>
     </footer>
 
 </body>
