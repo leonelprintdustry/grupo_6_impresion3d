@@ -1,26 +1,30 @@
 const express = require('express');
-
 const path = require('path'); 
+
+const mainRouter = require('./routes/main')
+const productRouter = require('./routes/productos')
+const authRouter = require('./routes/auth')
 
 const app = express();
 
-const mainRouter = require('./routes/main')
 
-const productRouter = require('./routes/productos')
+app.set('view engine', 'ejs');
+app.set('views', [
+    path.join(__dirname, './views')
+]);
 
-const authRouter = require('./routes/auth')
-
-const PORT = process.env.PORT || 3020;
 
 app.use(express.static('public'))
 
-app.listen(PORT,()=>console.log('servidor corriendo en el puerto'+PORT));
 
 app.use('/main', mainRouter);
-
 app.use('/products', productRouter);
-
 app.use('/auth', authRouter);
+
+
+const PORT = process.env.PORT || 3020;
+app.listen(PORT,()=>console.log('servidor corriendo en el puerto'+PORT));
+
 
 /*
 
