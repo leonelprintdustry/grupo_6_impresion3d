@@ -1,5 +1,7 @@
 TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
+Sprint 2: 
+
 Sprint 1:
 
     Conclusiones: La conclusión general es que necesitamos reunirnos al menos una vez por semana y dedicarle mas tiempo a los sprint para que podamos avanzar mejor. Esperemos poder implementar todo lo descripto mas abajo para el sprint 2. 
