@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <%- include('../partials/head') %>
 
     <link rel="stylesheet" href="/css/register.css">
@@ -22,11 +23,15 @@
 
                 <div class="control-formulario">
                     <label class="texto-nombre">Nombre del Producto</label>
-                    <input type="text" name="nombreCompleto"class="control" placeholder="Nombre del producto" id="nombreCompleto" pattern="[a-zA-Z]{1,}" required>          
+                    <input type="text" name="nombreDelProducto"class="control" placeholder="Nombre del producto" id="nombreCompleto" pattern="[a-zA-Z]{1,}" required>          
             </div>
             <div class="control-formulario">
                 <label class="texto">Descripción del Producto</label>
-                <input type="text" name="usuario" class="control" placeholder="Describa su producto aquí" pattern="[a-zA-Z]{8,}" required>    
+                <input type="text" name="descripcion" class="control" placeholder="Describa su producto aquí" pattern="[a-zA-Z]{8,}" required>    
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Precio</label>
+                <input type="number" name="precio" class="control" placeholder="Precio del producto" pattern="[a-zA-Z]{8,}" required> 
             </div>
             <div class="control-formulario">
                 <label class="texto">Categoria</label>
@@ -36,6 +41,8 @@
                     <option value="repuestos">Repuestos</option>
                     <option value="celulares">Celulares</option>
                 </select>
+            </div>
+            <div class="control-formulario">
                 <label class="texto">Material</label>
                 <select name="Material" id="Material" class="control">
                     <option value="abs">ABS</option>
@@ -43,6 +50,8 @@
                     <option value="tpu">TPU</option>
                     <option value="pa-12">PA-12</option>
                 </select>
+            </div>
+            <div class="control-formulario">
                 <label class="texto">Color</label>
                 <select name="Material" id="Material" class="control">
                     <option value="rojo">Rojo</option>
@@ -50,6 +59,8 @@
                     <option value="amarillo">Amarillo</option>
                     <option value="verde">Verde</option>
                 </select>
+            </div>
+            <div class="control-formulario">
                 <label class="texto">Subir fotos del producto</label>
                 <input type="file">file<br>
             </div>
