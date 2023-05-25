@@ -1,6 +1,6 @@
 TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
-Sprint 2.: 
+Sprint 2: 
 
 Conclusiones: En el caso de este Sprint al no ser muy complejo no nos ha generado dificultades en el grupo de trabajo o complejidades que hemos tenido que resolver. Nos hemos juntados dos veces y hemos dejado el Sprint resuelto. 
 
