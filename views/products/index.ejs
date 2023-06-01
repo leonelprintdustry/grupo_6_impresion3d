@@ -20,6 +20,25 @@
 
             <h3>Basado en tu última visita</h3>
         <section id="Basado-en-tu-ultima-visita">
+            
+            <article>
+                <% productos.forEach(producto => { %>
+                    <div class="contenedor" onclick="window.location.href='/products/<%= products.id %>/detail?dataSet=item'">
+                        <div class="imagen">
+                            <img src="<%= products.imgs %>" width="40%">
+                        </div>
+                        <div class="logo-envio">
+                            <i class="fa-solid fa-truck-fast" ></i>
+                        </div>
+                        <div class="precios-wrapper">
+                            <p class="precios"><%= products.precio %></p>
+                            <p class="descuentos"><%= products.descuento %></p>
+                        </div>
+                        <p class="descripciones"><%= products.descripcion %></p>
+                    </div>
+                    <% }); %>
+            </article>
+            
             <article>
                 <img class="img-articulos" src="./images/productos/iphonecase.jpg" alt="Iphone case" height="100px">
                 <div class="articulos">
