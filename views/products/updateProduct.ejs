@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/update.css"> 
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <div class="producto">
+        <form action="/products/<%= productoAModificar.id %>/update?_method=put" method="post">
+            <label for="">Nombre:</label>
+            <input type="text" name="name" value="<%= productoAModificar.name %>" id="">
+            <br>
+            <label for="">Precio:</label>
+            <input type="text" name="price" value="<%= productoAModificar.price %>" id="">
+            <br>
+            <label for="">Descuento:</label>
+            <input type="text" name="discount" value="<%= productoAModificar.discount %>" id="">
+            <br>
+            <label for="">Descripción:</label>
+            <input type="text" name="description" value="<%= productoAModificar.description %> " id="">
+            <br>
+            <input type="submit" value="Guardar Cambios"></input>
+        </form>
+        </div>
+    </main>
+    
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>

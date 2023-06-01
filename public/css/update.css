@@ -1,0 +1,31 @@
+.producto {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: black;
+    border-radius: 15px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .producto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .producto label {
+    text-align: center;
+  }
+  
+  .producto input[type="submit"],
+  .producto input[type="reset"] {
+    margin-top: 10px;
+  }
+  
+  .producto input[type="submit"] {
+    margin-right: 5px; 
+  }
+  

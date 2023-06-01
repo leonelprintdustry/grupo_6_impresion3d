@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const model = {
+const productModel = {
     // Ruta del archivo JSON
     route: '../data/products.json',
 
@@ -49,14 +49,14 @@ const model = {
         const indice = products.findIndex(productoActual => productoActual.id === id);
 
         // Actualizamos los datos del producto que corresponda, con los datos que nos pasaron por parámetros
-        products[indice].nombre = newData.nombre;
-        products[indice].descripcion = newData.descripcion;
-        products[indice].precio = newData.precio;
-        products[indice].descuento = newData.descuento;
-        products[indice].categoria = newData.categoria;
+        products[indice].name = newData.name;
+        products[indice].description = newData.description;
+        products[indice].price = newData.price;
+        products[indice].discount = newData.discount;
+        products[indice].category = newData.category;
         products[indice].material = newData.material;
-        products[indice].color = newData.color;
-        products[indice].imgs = newData.imgs;
+        products[indice].colors = newData.colors;
+        products[indice].imagen = newData.imagen;
 
         // Convertimos nuestro array de JS a un array de JSON
         const productsJSON = JSON.stringify(products);
@@ -86,4 +86,4 @@ const model = {
     }
 }
 
-module.exports = model;
+module.exports = productModel;

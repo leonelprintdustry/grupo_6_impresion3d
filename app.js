@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path'); 
 
-const mainRouter = require('./routes/main')
+const methodOverride = require('method-override');
+
+
+//const mainRouter = require('./routes/main')
 const productRouter = require('./routes/productos')
 const authRouter = require('./routes/auth')
 
@@ -15,10 +18,15 @@ app.set('views', [
 ]);
 
 
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(express.static('views'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 
-app.use('/main', mainRouter);
+
+//app.use('/main', mainRouter);
 app.use('/products', productRouter);
 app.use('/auth', authRouter);
 

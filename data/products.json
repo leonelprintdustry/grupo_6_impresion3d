@@ -1,24 +1,26 @@
 [
     {
         "id": 1,
-        "nombre": "Licuadora",
-        "descripcion": "Licuadora",
-        "precio": 4500,
-        "descuento": "20%",
-        "categoria": "Accesorios",
-        "material": "ABS",
-        "color": "Rojo",
-        "imgs": "/imgs/products/jabonero.jpg"
+        "name": "PlayStation",
+        "description": "Licuadoraaaaa",
+        "price": 4500565,
+        "discount": "100%",
+        "imagen": "/images/productos/jabonero.jpg"
     },
     {
         "id": 2,
-        "nombre": "Licuadora",
-        "descripcion": "Licuadora",
-        "precio": 4500,
-        "descuento": "10%",
-        "categoria": "Accesorios",
-        "material": "ABS",
-        "color": "Rojo",
-        "imgs": "/imgs/products/jabonero.jpg"
+        "name": "PlayStation",
+        "description": "Licuadoraaaaa",
+        "price": 4500565,
+        "discount": "100%",
+        "imagen": "/images/productos/jabonero.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Playytuiuygfghj",
+        "description": "Licuadoraaaaa   ",
+        "price": "4",
+        "discount": "100%",
+        "imagen": "/images/productos/jabonero.jpg"
     }
 ]
