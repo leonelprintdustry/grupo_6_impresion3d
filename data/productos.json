@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Licuadora",
+        "descripcion": "Licuadora",
+        "price": 4500,
+        "categoria": "Accesorios",
+        "material": "ABS",
+        "color": "Rojo",
+        "imgs": "/imgs/products/jabonero.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Licuadora",
+        "descripcion": "Licuadora",
+        "price": 4500,
+        "categoria": "Accesorios",
+        "material": "ABS",
+        "color": "Rojo",
+        "imgs": "/imgs/products/jabonero.jpg"
+    }
+]

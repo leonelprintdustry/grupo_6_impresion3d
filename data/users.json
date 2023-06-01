@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "firstName": "Gussi",
+        "lastName": "Gasparro",
+        "email": "ggasparro0@addtoany.com",
+        "password": "xT4MUUz",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/143x100.png/dddddd/000000"
+    },
+    {
+        "id": 2,
+        "firstName": "Franny",
+        "lastName": "Grcic",
+        "email": "fgrcic1@weather.com",
+        "password": "0robCvilY8",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/232x100.png/ff4444/ffffff"
+    },
+    {
+        "id": 3,
+        "firstName": "Michaeline",
+        "lastName": "Tilling",
+        "email": "mtilling2@joomla.org",
+        "password": "743hh0",
+        "categoria": "",
+        "imagen": "http://dummyimage.com/202x100.png/5fa2dd/ffffff"
+    },
+    {
+        "id": 4,
+        "firstName": "Shaylah",
+        "lastName": "Beviss",
+        "email": "sbeviss3@cornell.edu",
+        "password": "JJYkjT8dTOCg",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/160x100.png/5fa2dd/ffffff"
+    },
+    {
+        "id": 5,
+        "firstName": "Rani",
+        "lastName": "Cundict",
+        "email": "rcundict4@goo.gl",
+        "password": "hkl3OIhl1k",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/138x100.png/ff4444/ffffff"
+    },
+    {
+        "id": 6,
+        "firstName": "Lazarus",
+        "lastName": "Deere",
+        "email": "ldeere5@deliciousdays.com",
+        "password": "wAT0ePGYxaS",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/110x100.png/ff4444/ffffff"
+    },
+    {
+        "id": 7,
+        "firstName": "Dario",
+        "lastName": "Izachik",
+        "email": "dizachik6@cafepress.com",
+        "password": "Iq49InakNfxd",
+        "categoria": "admin",
+        "imagen": "http://dummyimage.com/241x100.png/dddddd/000000"
+    },
+    {
+        "id": 8,
+        "firstName": "Baxy",
+        "lastName": "Manchett",
+        "email": "bmanchett7@newyorker.com",
+        "password": "ql0F6q",
+        "categoria": "usuario",
+        "imagen": "http://dummyimage.com/153x100.png/cc0000/ffffff"
+    },
+    {
+        "id": 9,
+        "firstName": "Lucais",
+        "lastName": "Jerams",
+        "email": "ljerams8@parallels.com",
+        "password": "6n6nu5NTjyQ",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/101x100.png/5fa2dd/ffffff"
+    },
+    {
+        "id": 10,
+        "firstName": "Elene",
+        "lastName": "Reiner",
+        "email": "ereiner9@printfriendly.com",
+        "password": "VZguwzq7Ji",
+        "categoria": "vendedor",
+        "imagen": "http://dummyimage.com/119x100.png/5fa2dd/ffffff"
+    }
+]
