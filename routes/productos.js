@@ -17,4 +17,4 @@ router.get('/productAdd',  productController.getProductAdd );
 router.get('/', productController.getProducts);
 
 module.exports = router;
-s
+

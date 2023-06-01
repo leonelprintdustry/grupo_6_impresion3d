@@ -20,21 +20,20 @@
 
             <h3>Basado en tu última visita</h3>
         <section id="Basado-en-tu-ultima-visita">
-            
             <article>
-                <% productos.forEach(producto => { %>
-                    <div class="contenedor" onclick="window.location.href='/products/<%= products.id %>/detail?dataSet=item'">
+                <% productos.forEach(product => { %>
+                    <div class="contenedor" onclick="window.location.href='/products/<%= product.id %>/detail?dataSet=item'">
                         <div class="imagen">
-                            <img src="<%= products.imgs %>" width="40%">
+                            <img src="<%= product.imgs %>" width="40%">
                         </div>
                         <div class="logo-envio">
                             <i class="fa-solid fa-truck-fast" ></i>
                         </div>
                         <div class="precios-wrapper">
-                            <p class="precios"><%= products.precio %></p>
-                            <p class="descuentos"><%= products.descuento %></p>
+                            <p class="precios"><%= product.precio %></p>
+                            <p class="descuentos"><%= product.descuento %></p>
                         </div>
-                        <p class="descripciones"><%= products.descripcion %></p>
+                        <p class="descripciones"><%= product.descripcion %></p>
                     </div>
                     <% }); %>
             </article>
