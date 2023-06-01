@@ -16,6 +16,7 @@ const productController = {
     // @GET 1. /products (GET)
       getProducts: (req, res) => {
         const productos = productModel.findAll();
+        // aca me dijeron que ponga un consolelog(productos)
         res.render('index', {
             title: 'Productos',
             productos
