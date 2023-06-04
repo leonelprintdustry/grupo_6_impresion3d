@@ -34,7 +34,7 @@ const productController = {
           return res.send('error de id');
         }
       
-        res.render('productAdd', { itemAModificar: itemAModificar, title: 'add' });
+        res.render('create', { itemAModificar: itemAModificar, title: 'add' });
     },
     // @GET 1. /products (GET)
       getProducts: (req, res) => {
@@ -53,11 +53,11 @@ const productController = {
           return res.send('error de id');
         }
       
-        res.render('updateProduct', { productoAModificar: productoAModificar, title: 'Update' });
+        res.render('editProduct', { productoAModificar: productoAModificar, title: 'edit' });
     },
     
     getCreate: (req, res) => {
-        res.render('productAdd', { title: 'ProductAdd'});
+        res.render('create', { title: 'create'});
      },
 
     deleteProduct: (req, res) => {

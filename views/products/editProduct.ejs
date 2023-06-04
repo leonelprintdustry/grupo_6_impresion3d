@@ -10,7 +10,7 @@
     </header>
     <main>
         <div class="producto">
-        <form action="/products/<%= productoAModificar.id %>/update?_method=put" method="post">
+        <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post">
             <label for="">Nombre:</label>
             <input type="text" name="name" value="<%= productoAModificar.name %>" id="">
             <br>

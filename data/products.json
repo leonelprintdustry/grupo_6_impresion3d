@@ -18,9 +18,96 @@
     {
         "id": 3,
         "name": "Playytuiuygfghj",
-        "description": "Licuadoraaaaa   ",
+        "description": "Licuador ",
         "price": "4",
-        "discount": "100%",
-        "imagen": "/images/productos/jabonero.jpg"
+        "discount": "100%"
+    },
+    {
+        "id": 5,
+        "name": "IPhone 12 Case",
+        "description": "IPhone 12 Case",
+        "price": 1500,
+        "discount": "40% OFF",
+        "imagen": "./images/productos/iphonecase.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1000,
+        "discount": "20% off",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Lapicero ABS",
+        "description": "Lapicero ABS",
+        "price": 2500,
+        "discount": "10% off",
+        "imagen": "./images/productos/lapicero.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1200,
+        "discount": "5% off",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1770,
+        "discount": "40% OFF",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1000,
+        "discount": "20% off",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1500,
+        "discount": "10% off",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Jabonero PLA",
+        "description": "Jabonero PLA",
+        "price": 1200,
+        "discount": "5% off",
+        "imagen": "./images/productos/jabonero.jpg"
+    },
+    {
+        "name": "formularioregistro",
+        "price": 10,
+        "discount": "099%",
+        "description": "descripcion",
+        "imagen": "/images/productos/1685880067461-haaland.jpg",
+        "id": 13
+    },
+    {
+        "name": "team",
+        "price": 10,
+        "discount": "45%",
+        "description": "nuevaPrueba",
+        "imagen": "/images/productos/1685880550077-cristiano.jpg",
+        "id": 14
+    },
+    {
+        "name": "formularioregistro",
+        "price": 10,
+        "discount": "09%",
+        "description": "descripcion",
+        "imagen": "/images/productos/1685880701274-messi.jpg",
+        "id": 15
     }
 ]

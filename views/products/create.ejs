@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %>
+
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       
+        <%- include('../partials/header') %>
+       
+    </header>
+
+    <main>
+        <div class="formulario">
+        <form action="/products/index" method="post" class="create-form" enctype="multipart/form-data">
+                <div class="control-formulario">
+                    <label for="">Nombre:</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="">Precio:</label>
+            <input type="price" name="price" id="price">
+            <br>
+            <label for="">Descuento:</label>
+            <input type="text" name="discount" id="disocunt">
+            <br>
+            <label for="">Descripciones:</label>
+            <input type="text" name="description" id="description">
+            <br>
+            <label for="imagen">Imagen:</label>
+            <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">
+
+            <input type="submit"><input type="reset">
+            </div>
+        </form>
+            </div>
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+
+</body>
+</html>
