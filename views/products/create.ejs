@@ -17,15 +17,30 @@
     </header>
 
     <main>
+        <ul>
+            <% errors.forEach(errorActual => { %>
+            <li><%= errorActual.msg %></li>
+            <% }) %>
+          </ul>
+        
         <div class="formulario">
         <form action="/products/index" method="post" class="create-form" enctype="multipart/form-data">
                 <div class="control-formulario">
-                    <label for="">Nombre:</label>
-            <input type="text" name="name" id="name">
-            <br>
-            <label for="">Precio:</label>
-            <input type="price" name="price" id="price">
-            <br>
+                    <% if (errors.find(error => error.path === 'title')) { %>
+                        <label style="color: red;" for="">Nombre</label>
+                    <% }  else {%>
+                        <label for="">Nombre</label>
+                    <% }  %>
+                    <input type="text" value="<%= values.title %>" name="title" id="">
+                    <br>
+                    <br>
+                    <% if (errors.find(error => error.path === 'price')) { %>
+                        <label style="color: red;" for="">Precio</label>
+                    <% }  else {%>
+                        <label for="">Precio</label>
+                    <% }  %>
+                    <input type="number" value="<%= values.price %>" name="price" id="">
+                    <br>
             <label for="">Descuento:</label>
             <input type="text" name="discount" id="disocunt">
             <br>

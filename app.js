@@ -8,44 +8,39 @@ const expressSession = require('express-session');
 
 //const mainRouter = require('./routes/main')
 const productRouter = require('./routes/productos')
-const authRouter = require('./routes/auth')
+const userRouter = require('./routes/userRoutes')
 
 const app = express();
 
 
 app.set('view engine', 'ejs');
 app.set('views', [
-    path.join(__dirname, './views/users'),
-    path.join(__dirname, './views/products')
+    path.join(__dirname, './views/products'),
+    path.join(__dirname, './views/users')
 ]);
 
 
 app.use(express.static('public'));
 app.use(express.static('views'));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json()); // Mueve esta línea antes del middleware de registro de rutas
-app.use(methodOverride('_method'));
+app.use(express.urlencoded({extended: true})),
+app.use(express.json()),
+app.use(methodOverride('_method'))
 app.use(morgan('tiny'));
 app.use(cookieParser());
-app.use(expressSession({
-    secret: 'este es mi secreto secretito secretoso',
-    resave: true, 
-    saveUninitialized: true 
-}));
+app.use(expressSession({ secret: 'este es mi secreto secretito secretoso'}));
 
-// Mueve este middleware después de express.json()
 app.use((req, res, next) => {
     const ruta = req.originalUrl + '\n';
     fs.appendFileSync(path.join(__dirname, './data/rutas.txt'), ruta);
     next();
 });
 
-
-app.use((req, res, next) => {
-    if(req.body.email){
+/*app.use((req, res, next) => {
+    if(req.cookies.email){
         const userModel = require('./models/user');
 
-        const user = userModel.findByEmail(req.body.email);
+        const user = userModel.findByEmail(req.cookies.email);
+
         console.log(user);
         delete user.id;
         delete user.password;
@@ -54,12 +49,11 @@ app.use((req, res, next) => {
     }
 
     next();
-})
-
+})*/
 
 //app.use('/main', mainRouter);
 app.use('/products', productRouter);
-app.use('/auth', authRouter);
+app.use('/users', userRouter);
 
 
 

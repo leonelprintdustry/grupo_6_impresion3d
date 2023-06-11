@@ -1,8 +1,5 @@
-
 const express = require('express');
-
-const controllers = require('../controllers/authController')
-
+const controllers = require('../controllers/userControllers');
 const router = express.Router();
 
 //@GET - /users/sign-out

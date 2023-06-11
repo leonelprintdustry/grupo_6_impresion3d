@@ -106,7 +106,7 @@ const productController = {
     
         const productos = productModel.findAll();
         const userData = req.session.user; // Agrega esta línea para obtener userData
-        res.render('index', { title: 'Productos', productos, userData }); // Pasa userData al renderizar la vista
+        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body }); // Pasa userData al renderizar la vista
     },
 };
     
