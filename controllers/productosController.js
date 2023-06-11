@@ -1,13 +1,15 @@
 
 const path = require('path'); 
+const expressValidator = require('express-validator');
+
 
 const productModel = require('../models/productos');
 
 const productController = {
     getIndex: (req, res) => {
         const productos = productModel.findAll();
-
-        res.render('index', { title: 'Home', productos});
+        const userData = req.session.user;
+        res.render('index', { title: 'Home', productos, userData: userData});
     },
 
     getProductCart: (req,res) => {
@@ -39,6 +41,7 @@ const productController = {
     // @GET 1. /products (GET)
       getProducts: (req, res) => {
         const productos = productModel.findAll();
+        console.log(req.query.nombre);
         res.render('index', {
             title: 'Productos',
             productos
@@ -57,7 +60,7 @@ const productController = {
     },
     
     getCreate: (req, res) => {
-        res.render('create', { title: 'create'});
+        res.render('create', { title: 'create', errors: [], values: {} });
      },
 
     deleteProduct: (req, res) => {
@@ -86,26 +89,27 @@ const productController = {
     },
 
     postProduct: (req, res) => {
+        const validation = expressValidator.validationResult(req);
+    
+        if (validation.errors.length > 0) {
+            return res.render('create', { errors: validation.errors, values: req.body });
+        }
+    
         let datos = req.body;
-
-        console.log(req.files)
-
         datos.name = datos.name;
         datos.discount = datos.discount;
         datos.description = datos.description;
         datos.price = Number(datos.price);
         datos.imagen = '/images/productos/' + req.files[0].filename; 
-        //datos.imagen = req.files.map(file => '/images/products' + file.filename);
-
+    
         productModel.createOne(datos);
-
-        //res.redirect('/products/index');
-        
-    const productos = productModel.findAll();
-    res.render('index', { title: 'Productos', productos });
+    
+        const productos = productModel.findAll();
+        const userData = req.session.user; // Agrega esta línea para obtener userData
+        res.render('index', { title: 'Productos', productos, userData }); // Pasa userData al renderizar la vista
     },
-
 };
+    
 
 
 

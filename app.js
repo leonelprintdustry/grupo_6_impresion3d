@@ -1,8 +1,10 @@
 const express = require('express');
-const path = require('path'); 
-
+const path = require('path');
+const fs = require('fs');
 const methodOverride = require('method-override');
-
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
 
 //const mainRouter = require('./routes/main')
 const productRouter = require('./routes/productos')
@@ -21,9 +23,38 @@ app.set('views', [
 app.use(express.static('public'));
 app.use(express.static('views'));
 app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.json()); // Mueve esta línea antes del middleware de registro de rutas
 app.use(methodOverride('_method'));
+app.use(morgan('tiny'));
+app.use(cookieParser());
+app.use(expressSession({
+    secret: 'este es mi secreto secretito secretoso',
+    resave: true, 
+    saveUninitialized: true 
+}));
 
+// Mueve este middleware después de express.json()
+app.use((req, res, next) => {
+    const ruta = req.originalUrl + '\n';
+    fs.appendFileSync(path.join(__dirname, './data/rutas.txt'), ruta);
+    next();
+});
+
+
+app.use((req, res, next) => {
+    if(req.body.email){
+        const userModel = require('./models/user');
+
+        const user = userModel.findByEmail(req.body.email);
+        console.log(user);
+        delete user.id;
+        delete user.password;
+
+        req.session.user = user;
+    }
+
+    next();
+})
 
 
 //app.use('/main', mainRouter);
@@ -31,9 +62,10 @@ app.use('/products', productRouter);
 app.use('/auth', authRouter);
 
 
-const PORT = process.env.PORT || 3020;
-app.listen(PORT,()=>console.log('servidor corriendo en el puerto '+ PORT));
 
+app.listen(1112 ,() => {
+console.log('servidor corriendo en el puerto http://localhost:1112')
+});
 
 /*
 
