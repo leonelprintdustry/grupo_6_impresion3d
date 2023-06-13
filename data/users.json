@@ -1,92 +1,37 @@
 [
     {
-        "id": 1,
-        "firstName": "Gussi",
-        "lastName": "Gasparro",
-        "email": "ggasparro0@addtoany.com",
-        "password": "xT4MUUz",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/143x100.png/dddddd/000000"
+        "email": "loshuevicidias09@gmail.com",
+        "username": "tqsn1k",
+        "password": "12354568789",
+        "id": 1
     },
     {
-        "id": 2,
-        "firstName": "Franny",
-        "lastName": "Grcic",
-        "email": "fgrcic1@weather.com",
-        "password": "0robCvilY8",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/232x100.png/ff4444/ffffff"
+        "email": "quinterostomas930@gmail.com",
+        "username": "Tomas Quinteros",
+        "password": "$2b$12$.vxEwAp.j8OiLgiMHnovh.jhzKKTDU0PuOsxA6hXLldX4QN9fnzCq",
+        "id": "3b2d4f44-3664-45e2-a1e1-52208a655548"
     },
     {
-        "id": 3,
-        "firstName": "Michaeline",
-        "lastName": "Tilling",
-        "email": "mtilling2@joomla.org",
-        "password": "743hh0",
-        "categoria": "",
-        "imagen": "http://dummyimage.com/202x100.png/5fa2dd/ffffff"
+        "email": "quinterostomas9301@gmail.com",
+        "username": "Tomas Quinteros",
+        "password": "$2b$12$OksLeYd60S.nO7kOsdIs9etGJpHDpXCoI901gdB.rI5.Gjm.jVElO",
+        "id": "e493370b-8ca2-429f-8a2b-b7a603ad864a"
     },
     {
-        "id": 4,
-        "firstName": "Shaylah",
-        "lastName": "Beviss",
-        "email": "sbeviss3@cornell.edu",
-        "password": "JJYkjT8dTOCg",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/160x100.png/5fa2dd/ffffff"
+        "email": "quinterostomas10@gmail.com",
+        "username": "Tomas Quinteros",
+        "password": "$2b$12$4biZnxrgMyeOA.B57HbjFOeS4Q2iFfwmATLEpaiX3KSqtcXFMHFWy",
+        "id": "fa1ebd85-365b-4982-9179-cb3d3914a5b0"
     },
     {
-        "id": 5,
-        "firstName": "Rani",
-        "lastName": "Cundict",
-        "email": "rcundict4@goo.gl",
-        "password": "hkl3OIhl1k",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/138x100.png/ff4444/ffffff"
-    },
-    {
-        "id": 6,
-        "firstName": "Lazarus",
-        "lastName": "Deere",
-        "email": "ldeere5@deliciousdays.com",
-        "password": "wAT0ePGYxaS",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/110x100.png/ff4444/ffffff"
-    },
-    {
-        "id": 7,
-        "firstName": "Dario",
-        "lastName": "Izachik",
-        "email": "dizachik6@cafepress.com",
-        "password": "Iq49InakNfxd",
-        "categoria": "admin",
-        "imagen": "http://dummyimage.com/241x100.png/dddddd/000000"
-    },
-    {
-        "id": 8,
-        "firstName": "Baxy",
-        "lastName": "Manchett",
-        "email": "bmanchett7@newyorker.com",
-        "password": "ql0F6q",
-        "categoria": "usuario",
-        "imagen": "http://dummyimage.com/153x100.png/cc0000/ffffff"
-    },
-    {
-        "id": 9,
-        "firstName": "Lucais",
-        "lastName": "Jerams",
-        "email": "ljerams8@parallels.com",
-        "password": "6n6nu5NTjyQ",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/101x100.png/5fa2dd/ffffff"
-    },
-    {
-        "id": 10,
-        "firstName": "Elene",
-        "lastName": "Reiner",
-        "email": "ereiner9@printfriendly.com",
-        "password": "VZguwzq7Ji",
-        "categoria": "vendedor",
-        "imagen": "http://dummyimage.com/119x100.png/5fa2dd/ffffff"
+        "username": "abece",
+        "usuario": "abcdefghi",
+        "email": "abece@gmail.com",
+        "fecha": "2004-11-02",
+        "Pais": "Arg",
+        "password": "$2b$12$osI8F.ttsMXYQyCytkoqSugJwkl536WN.slrmqRnTG6zyzOZeEGp6",
+        "Confirmar": "abece",
+        "domicilio": "abece",
+        "id": "f1e902c6-0072-4fcd-b36c-406b111a21e7"
     }
 ]
