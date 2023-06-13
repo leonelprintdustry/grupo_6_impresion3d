@@ -41,12 +41,9 @@
                     <br>
                     <h2>Descripción: <%= product.description %> </h2>
                     <br>
-                    <div class="estrella">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <h3>Calificacion del producto</h3>
-                    </div>
+                    <h2>Material: <%= product.material %> </h2>
+                    <br>
+                    <h2>Color: <%= product.color %> </h2>
                     <br>
                     <form action="nombre del archivo" method="get" class="formulario">
                         <div class="formularios-segundos">
@@ -59,11 +56,10 @@
                             <br>
                         </div>
                         <div class="color-formulario">
+                            <h2>Seleccionar color</h2>
                             <select name="Color">
                                 <option value="" disabled selected>Color:</option>
-                                <option value="">Rojo</option>
-                                <option value="">Azul</option>
-                                <option value="">Naranja</option>
+                                <option value=""><%= product.color %></option>
                             </select>
                             <br>
                         </div>
@@ -72,6 +68,13 @@
                                 <button id="<%= product.id %>" onclick="addToCart(this.id)">Agregar al carrito</button>
                                 <br>
                             </div>
+                            <div class="estrella">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <h3>Calificacion del producto</h3>
+                            </div>
+                            <br>
                         </form>
                             <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
                                 <input type="submit" value='Eliminar producto'></input>

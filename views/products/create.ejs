@@ -33,6 +33,9 @@
                     <% }  %>
                     <input type="text" value="<%= values.title %>" name="title" id="">
                     <br>
+                    <label for="">Descripcion:</label>
+                    <input type="text" name="description" id="description">
+                    <br>
                     <br>
                     <% if (errors.find(error => error.path === 'price')) { %>
                         <label style="color: red;" for="">Precio</label>
@@ -44,13 +47,33 @@
             <label for="">Descuento:</label>
             <input type="text" name="discount" id="disocunt">
             <br>
-            <label for="">Descripciones:</label>
-            <input type="text" name="description" id="description">
-            <br>
+           
+            <label class="texto">Categoria</label>
+                <select name="Categoria" id="Categoria" class="control">
+                    <option value="Acc">Accesorios</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="repuestos">Repuestos</option>
+                    <option value="celulares">Celulares</option>
+                </select>
+            <label class="texto">Material</label>
+                <select name="Material" id="Material" class="control">
+                    <option value="abs">ABS</option>
+                    <option value="pla">PLA</option>
+                    <option value="tpu">TPU</option>
+                    <option value="pa-12">PA-12</option>
+                </select>
+            <label class="texto">Color</label>
+                <select name="Material" id="Material" class="control">
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="verde">Verde</option>
+                </select>
             <label for="imagen">Imagen:</label>
             <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">
-
-            <input type="submit"><input type="reset">
+            <br>
+            <input type="submit" value="Enviar"><br>
+            <input type="reset" value="Borrar"><br>
             </div>
         </form>
             </div>
