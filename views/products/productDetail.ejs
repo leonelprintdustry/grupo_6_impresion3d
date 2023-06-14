@@ -19,9 +19,13 @@
 
         <div class="contenedor-main">
             <div class="primero">
-                <div class="boton-primero"><button><i class="fa-solid fa-arrow-left">Volver</i></button></div>
+                <form action="/products/index" method="get">
+                    <div class="boton-primero">
+                        <button type="submit"><i class="fa-solid fa-arrow-left"></i> Volver</button>
+                    </div>
+                </form>
                 <div class="imagen-producto-grande">
-                    <img src="<%= product.imagen %>" style="width: 40%">
+                    <img src="<%= product.imagen %>" style="width: 60%">
                 </div>
                 <div class="imagenes-pequeñas">
                     <i class="fa-solid fa-arrow-left"></i>
@@ -95,7 +99,7 @@
                 <div class="titular-tercero"><h2>Descripcion del producto</h2></div>
                 <div class="descripcion-tercero"><h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta sapiente, temporibus minima vero quasi recusandae cum quaerat incidunt beatae labore possimus nulla animi provident laudantium numquam vel saepe ratione.</h3></div>
                 <div class="calificacion-tercero"><h3>Calificacion del vendedor</h3><i class="fa-solid fa-star"></i></div>
-                <div class="nombre-producto-tercero"><h3>Nombre del producto</h3></div>
+                <div class="nombre-producto-tercero"><h3>Nombre del Producto: <%= product.name %></h3></div>
             </div>       
         
         

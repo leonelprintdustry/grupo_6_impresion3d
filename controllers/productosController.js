@@ -80,11 +80,15 @@ const productController = {
         nuevosDatos.description = nuevosDatos.descripciones;
         nuevosDatos.price = Number(nuevosDatos.precio);
         nuevosDatos.discount = nuevosDatos.descuento;
-        datos.image = '/images/productos/' + req.files[0].filename; 
-*/
+        nuevosDatos.imagen = '/images/productos/' + req.files[0].filename; 
+        */
+        /*if (req.files && req.files.length > 0) {
+        nuevosDatos.imagen = '/images/productos/' + req.files[0].filename;
+        }*/
+
         productModel.updateById(id, nuevosDatos);
         
-        res.redirect('/products/index');
+        res.redirect('/products/index' );
     },
 
     postProduct: (req, res) => {
@@ -105,8 +109,8 @@ const productController = {
         productModel.createOne(datos);
     
         const productos = productModel.findAll();
-        const userData = req.session.user; // Agrega esta línea para obtener userData
-        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData}); // Pasa userData al renderizar la vista
+        const userData = req.session.user; 
+        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData}); 
     },
 };
     
