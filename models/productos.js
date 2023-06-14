@@ -54,7 +54,7 @@ const productModel = {
         products[indice].price = newData.price;
         products[indice].discount = newData.discount;
         products[indice].category = newData.category;
-        products[indice].material = newData.material;
+        products[indice].materials = newData.materials;
         products[indice].colors = newData.colors;
         products[indice].imagen = newData.imagen;
 

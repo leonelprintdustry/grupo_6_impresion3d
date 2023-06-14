@@ -33,5 +33,38 @@
         "Confirmar": "abece",
         "domicilio": "abece",
         "id": "f1e902c6-0072-4fcd-b36c-406b111a21e7"
+    },
+    {
+        "username": "zinedine zidane",
+        "usuario": "zzzzzzzz",
+        "email": "zz@gmail.com",
+        "fecha": "1233-03-12",
+        "Pais": "Arg",
+        "password": "$2b$12$T4YeiOx4lbYOOPZAvcdK0.OLEAx/bEjWDQUpE56d3gUOrlfDOCoQK",
+        "Confirmar": "zz",
+        "domicilio": "zz",
+        "id": "2e2f4b41-8017-42d3-a97f-044466d4999f"
+    },
+    {
+        "username": "sdfghjhgfds",
+        "usuario": "sdfghjmnbvc",
+        "email": "1234ssssssss@gmail.com",
+        "fecha": "4344-04-23",
+        "Pais": "Arg",
+        "password": "$2b$12$oC12P/6HlV51sYNlW/5AkeGIhZvJE9FuFWU0gOd/TLgDglPRhDI9C",
+        "Confirmar": "sdfbfx",
+        "domicilio": "sdfgnbvcx",
+        "id": "5708bf0c-bf5f-4878-8154-f6e1cfc1afd2"
+    },
+    {
+        "username": "sdfghjhgfds",
+        "usuario": "sdfghjmnbvc",
+        "email": "1234ssssssss@gmail.com",
+        "fecha": "4344-04-23",
+        "Pais": "Arg",
+        "password": "$2b$12$TeBzDXA7DKQ4u0xlX/rNWubD/bDV61pTu28sU.ApgIYd3EXddxg2q",
+        "Confirmar": "sdfbfx",
+        "domicilio": "sdfgnbvcx",
+        "id": "06d3823e-4f19-4907-b49f-49432d87d80a"
     }
 ]

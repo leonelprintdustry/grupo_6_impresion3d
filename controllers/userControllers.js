@@ -7,7 +7,7 @@ const controllers = {
 
         req.session.user = {};
 
-        res.redirect('/users/login');
+        res.redirect('/products/index');
     },
 
     getRegister: (req, res) => {
@@ -24,7 +24,7 @@ const controllers = {
 
         userModel.createOne(user);
 
-        res.send('se registro el usuario');
+        res.redirect('/products/index');
     },
     getLogin: (req, res) => {
         const error = req.query.error || '';

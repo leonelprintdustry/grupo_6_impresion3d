@@ -29,46 +29,55 @@
                     <% if (errors.find(error => error.path === 'title')) { %>
                         <label style="color: red;" for="">Nombre</label>
                     <% }  else {%>
-                        <label for="">Nombre</label>
+                        <label for="">Nombre:</label>
                     <% }  %>
-                    <input type="text" value="<%= values.title %>" name="title" id="">
+                    <input type="text" value="<%= values.title %>" name="name" id="" class="control" placeholder="Coloca tu nombre aqui">
+                    <br>
                     <br>
                     <label for="">Descripcion:</label>
-                    <input type="text" name="description" id="description">
+                    <input type="text" name="description" id="description" class="control" placeholder="Coloca la descripcion del producto">
                     <br>
                     <br>
                     <% if (errors.find(error => error.path === 'price')) { %>
                         <label style="color: red;" for="">Precio</label>
                     <% }  else {%>
-                        <label for="">Precio</label>
+                        <label for="">Precio:</label>
                     <% }  %>
-                    <input type="number" value="<%= values.price %>" name="price" id="">
+                    <input type="number" value="<%= values.price %>" name="price" id="" class="control" placeholder="Coloca el precio del producto aqui">
+                    <br>
                     <br>
             <label for="">Descuento:</label>
-            <input type="text" name="discount" id="disocunt">
+            <input type="text" name="discount" id="disocunt" class="control" placeholder="Agrega un descuento a tu producto">
+            <br>
             <br>
            
-            <label class="texto">Categoria</label>
-                <select name="Categoria" id="Categoria" class="control">
+            <label class="texto">Categoria:</label>
+                <select name="category" id="category" class="control">
                     <option value="Acc">Accesorios</option>
                     <option value="gaming">Gaming</option>
                     <option value="repuestos">Repuestos</option>
                     <option value="celulares">Celulares</option>
                 </select>
-            <label class="texto">Material</label>
-                <select name="Material" id="Material" class="control">
+                <br>
+                <br>
+            <label class="texto">Material:</label>
+                <select name="materials" id="materials" class="control">
                     <option value="abs">ABS</option>
                     <option value="pla">PLA</option>
                     <option value="tpu">TPU</option>
                     <option value="pa-12">PA-12</option>
                 </select>
-            <label class="texto">Color</label>
-                <select name="Material" id="Material" class="control">
+                <br>
+                <br>
+            <label class="texto">Color:</label>
+                <select name="colors" id="colors" class="control">
                     <option value="rojo">Rojo</option>
                     <option value="azul">Azul</option>
                     <option value="amarillo">Amarillo</option>
                     <option value="verde">Verde</option>
                 </select>
+                <br>
+                <br>
             <label for="imagen">Imagen:</label>
             <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">
             <br>

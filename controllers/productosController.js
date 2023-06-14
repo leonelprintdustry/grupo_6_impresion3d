@@ -91,7 +91,8 @@ const productController = {
         const validation = expressValidator.validationResult(req);
     
         if (validation.errors.length > 0) {
-            return res.render('create', { errors: validation.errors, values: req.body });
+            const userData = req.session.user;
+            return res.render('create', { errors: validation.errors, values: req.body, userData });
         }
     
         let datos = req.body;
@@ -105,7 +106,7 @@ const productController = {
     
         const productos = productModel.findAll();
         const userData = req.session.user; // Agrega esta línea para obtener userData
-        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body }); // Pasa userData al renderizar la vista
+        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData}); // Pasa userData al renderizar la vista
     },
 };
     

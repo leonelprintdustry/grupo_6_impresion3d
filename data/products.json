@@ -7,7 +7,11 @@
         "discount": "100%",
         "categoria": "gaming",
         "material": "ABS",
-        "color": ["rojo", "azul", "verde"],
+        "color": [
+            "rojo",
+            "azul",
+            "verde"
+        ],
         "imagen": "/images/productos/jabonero.jpg"
     },
     {
@@ -83,7 +87,11 @@
         "description": "Licuadora 2032",
         "categoria": "gaming",
         "material": "ABS",
-        "color": ["rojo", "azul", "verde"],
+        "color": [
+            "rojo",
+            "azul",
+            "verde"
+        ],
         "imagen": "/images/productos/1686612158857-jabonero.jpg",
         "id": 10
     },
@@ -97,5 +105,50 @@
         "color": "rojo",
         "imagen": "/images/productos/1686612273614-iphonecase.jpg",
         "id": 11
+    },
+    {
+        "title": "PlayStation",
+        "description": "descripcion",
+        "price": 10,
+        "discount": "1%",
+        "category": "repuestos",
+        "materials": "tpu",
+        "colors": "azul",
+        "imagen": "/images/productos/1686704553951-1686612158857-jabonero.jpg",
+        "id": 12
+    },
+    {
+        "title": "PlayStation",
+        "description": "descripcion ",
+        "price": "10",
+        "discount": "1%",
+        "category": "repuestos ",
+        "materials": "tpu ",
+        "colors": "azul ",
+        "imagen": "/images/productos/1686704567288-1686612158857-jabonero.jpg ",
+        "id": 13,
+        "name": "Producto 3d lapicero"
+    },
+    {
+        "name": "Jabonero 1",
+        "description": "des",
+        "price": "10",
+        "discount": "`15%",
+        "category": "repuestos ",
+        "materials": "tpu ",
+        "colors": "amarillo",
+        "imagen": "/images/productos/1686704690979-lapicero.jpg ",
+        "id": 14
+    },
+    {
+        "name": "Producto 3d lapicero",
+        "description": "descripcion ",
+        "price": "10",
+        "discount": "53423%",
+        "category": "repuestos ",
+        "materials": "pa-12 ",
+        "colors": "azul ",
+        "imagen": "/images/productos/1686704937280-1686612273614-iphonecase.jpg ",
+        "id": 15
     }
 ]
