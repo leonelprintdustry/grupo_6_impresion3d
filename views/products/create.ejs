@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %>
+
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       
+        <%- include('../partials/header') %>
+       
+    </header>
+
+    <main>
+        <ul>
+            <% errors.forEach(errorActual => { %>
+            <li><%= errorActual.msg %></li>
+            <% }) %>
+          </ul>
+        
+        <div class="formulario">
+        <form action="/products/index" method="post" class="create-form" enctype="multipart/form-data">
+                <div class="control-formulario">
+                    <% if (errors.find(error => error.path === 'title')) { %>
+                        <label style="color: red;" for="">Nombre</label>
+                    <% }  else {%>
+                        <label for="">Nombre:</label>
+                    <% }  %>
+                    <input type="text" value="<%= values.title %>" name="name" id="" class="control" placeholder="Coloca tu nombre aqui">
+                    <br>
+                    <br>
+                    <label for="">Descripcion:</label>
+                    <input type="text" name="description" id="description" class="control" placeholder="Coloca la descripcion del producto">
+                    <br>
+                    <br>
+                    <% if (errors.find(error => error.path === 'price')) { %>
+                        <label style="color: red;" for="">Precio</label>
+                    <% }  else {%>
+                        <label for="">Precio:</label>
+                    <% }  %>
+                    <input type="number" value="<%= values.price %>" name="price" id="" class="control" placeholder="Coloca el precio del producto aqui">
+                    <br>
+                    <br>
+            <label for="">Descuento:</label>
+            <input type="text" name="discount" id="disocunt" class="control" placeholder="Agrega un descuento a tu producto">
+            <br>
+            <br>
+           
+            <label class="texto">Categoria:</label>
+                <select name="category" id="category" class="control">
+                    <option value="Acc">Accesorios</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="repuestos">Repuestos</option>
+                    <option value="celulares">Celulares</option>
+                </select>
+                <br>
+                <br>
+            <label class="texto">Material:</label>
+                <select name="materials" id="materials" class="control">
+                    <option value="abs">ABS</option>
+                    <option value="pla">PLA</option>
+                    <option value="tpu">TPU</option>
+                    <option value="pa-12">PA-12</option>
+                </select>
+                <br>
+                <br>
+            <label class="texto">Color:</label>
+                <select name="colors" id="colors" class="control">
+                    <option value="rojo">Rojo</option>
+                    <option value="azul">Azul</option>
+                    <option value="amarillo">Amarillo</option>
+                    <option value="verde">Verde</option>
+                </select>
+                <br>
+                <br>
+            <label for="imagen">Imagen:</label>
+            <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">
+            <br>
+            <input type="submit" value="Enviar"><br>
+            <input type="reset" value="Borrar"><br>
+            </div>
+        </form>
+            </div>
+
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+
+</body>
+</html>

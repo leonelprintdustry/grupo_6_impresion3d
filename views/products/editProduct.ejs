@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/update.css"> 
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <div class="producto">
+        <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post">
+            <label for="">Nombre:</label>
+            <input type="text" name="name" value="<%= productoAModificar.name %>" id="">
+            <br>
+            <br>
+            <label for="">Precio:</label>
+            <input type="text" name="price" value="<%= productoAModificar.price %>" id="">
+            <br>
+            <br>
+            <label for="">Descuento:</label>
+            <input type="text" name="discount" value="<%= productoAModificar.discount %>" id="">
+            <br>
+            <br>
+            <label for="">Material:</label>
+            <input type="text" name="materials" value="<%= productoAModificar.materials %> " id="">
+            <br>
+            <br>
+            <label for="">Descripción:</label>
+            <input type="text" name="description" value="<%= productoAModificar.description %> " id="">
+            <br>
+            <br>
+            <label for="">Categoria:</label>
+            <input type="text" name="category" value="<%= productoAModificar.category %> " id="">
+            <br>
+            <br>
+            <label for="">Color:</label>
+            <input type="text" name="colors" value="<%= productoAModificar.colors %> " id="">
+            <br>
+            <br>
+            <label for="">Imagen:</label>
+            <input type="text" name="imagen" value="<%= productoAModificar.imagen %> " id="">
+            <br>
+            <br>
+            <input type="submit" value="Guardar Cambios"></input>
+        </form>
+        </div>
+    </main>
+    
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>

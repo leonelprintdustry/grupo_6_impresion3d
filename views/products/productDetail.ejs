@@ -19,8 +19,14 @@
 
         <div class="contenedor-main">
             <div class="primero">
-                <div class="boton-primero"><button><i class="fa-solid fa-arrow-left">Volver</i></button></div>
-                <div class="imagen-producto-grande"><img src="/images/productos/jabonero.jpg" style="width: 40%"></div>
+                <form action="/products/index" method="get">
+                    <div class="boton-primero">
+                        <button type="submit"><i class="fa-solid fa-arrow-left"></i> Volver</button>
+                    </div>
+                </form>
+                <div class="imagen-producto-grande">
+                    <img src="<%= product.imagen %>" style="width: 60%">
+                </div>
                 <div class="imagenes-pequeñas">
                     <i class="fa-solid fa-arrow-left"></i>
                     <div class="fotito"><img src="foto"></div>
@@ -31,59 +37,71 @@
                 </div>
                 </div>
                 <div class="segundo">
-                    <h2>Nombre Del Producto</h2>
-                    <h3>Breve descripcion</h3>
-                    <h3>$ 1.200</h3>
-
-                    <div class="estrella">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    <h3>Calificacion del producto</h3>
-                    </div>
+                    <h2>Nombre: <%= product.name %> </h2>
+                    <br>
+                    <h2>Precio: <%= product.price %> </h2>
+                    <br>
+                    <h2>Descuento: <%= product.discount %> </h2>
+                    <br>
+                    <h2>Descripción: <%= product.description %> </h2>
+                    <br>
+                    <h2>Material: <%= product.materials %> </h2>
+                    <br>
+                    <h2>Color: <%= product.colors %> </h2>
+                    <br>
+                    <h2>Color: <%= product.category %> </h2>
+                    <br>
                     <form action="nombre del archivo" method="get" class="formulario">
                         <div class="formularios-segundos">
-                        <div class="cantidad-formulario">
-                            <select name="Cantidad">
-                                <option value="" disabled selected>Cantidad:</option>
-                                <option value="">Opcion Uno</option>
-                                <option value="">Opcion Dos</option>
-                                <option value="">Opcion Tres</option>
-                            </select>
+                            <div class="cantidad-formulario">
+                                <div class="Cantidad">
+                                    <label for="">Cantidad:</label>
+                                    <input type="text" name="cantidad" value="" id="">
+                                    <br>
+                                </div>
+                            <br>
                         </div>
                         <div class="color-formulario">
+                            <h2>Seleccionar color</h2>
                             <select name="Color">
                                 <option value="" disabled selected>Color:</option>
-                                <option value="">Opcion Uno</option>
-                                <option value="">Opcion Dos</option>
-                                <option value="">Opcion Tres</option>
+                                <option value=""><%= product.color %></option>
                             </select>
-                            
+                            <br>
                         </div>
-                        <div class="material-formulario">
-                            <select name="Material">
-                                <option value="" disabled selected>Material:</option>
-                                <option value="">Opcion Uno</option>
-                                <option value="">Opcion Dos</option>
-                                <option value="">Opcion Tres</option>
-                            </select>
-                            </div>
                             </div>
                             <div class="boton-segundo">
-                                <button>Agregar al carrito</button>
+                                <button id="<%= product.id %>" onclick="addToCart(this.id)">Agregar al carrito</button>
+                                <br>
                             </div>
+                            <div class="estrella">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <h3>Calificacion del producto</h3>
+                            </div>
+                            <br>
+                        </form>
+                            <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
+                                <input type="submit" value='Eliminar producto'></input>
+                                <br>
+                            </form>
+                            <br>
+                            <a href="/products/<%= product.id %>/update?dataSet=item">
+                                <button>Editar Producto</button>
+                                <br>
+                            </a>  
                            
                         </div>
-                    </form>
                 </div>
                 
             <div class="tercero">
                 <div class="titular-tercero"><h2>Descripcion del producto</h2></div>
                 <div class="descripcion-tercero"><h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta sapiente, temporibus minima vero quasi recusandae cum quaerat incidunt beatae labore possimus nulla animi provident laudantium numquam vel saepe ratione.</h3></div>
                 <div class="calificacion-tercero"><h3>Calificacion del vendedor</h3><i class="fa-solid fa-star"></i></div>
-                <div class="nombre-producto-tercero"><h3>Nombre del producto</h3></div>
+                <div class="nombre-producto-tercero"><h3>Nombre del Producto: <%= product.name %></h3></div>
             </div>       
-        </div>
+        
         
     </main>
 

@@ -16,25 +16,25 @@
     </header>
 
     <main>
-        <form action="home.html" method="get" class="create-form">
-            <div class="login">
-                <label class="texto"><i class="fa-solid fa-user"></i> Nombre de usuario</label>
-                <input type="text" name="nombre de usuario" class="loguear" placeholder="Nombre de usuario"> 
-            </div>
-                <div class="login">
-                    <label class="texto"><i class="fa-solid fa-key"></i> Contraseña</label>
-                <input type="password" name="contraseña" class="loguear" placeholder="Contraseña">
-            </div>
-            <div class="recordar">        
-                <a href="#">¿Olvidaste tu contraseña?</a>
-            </div>
-            <div class="login-boton">
-                <button type="submit">Enviar</button></a>  
-            </div> 
-            <div class="recordar">
-                ¿No estas registrado? <a href="/register">Registrate aqui</a>
-            </div>
+        <div class="control-formulario">
+        <h1>Iniciar sesion</h1>
+        <form action="/users/login" method="post">
+            <h1 style="color: red"><%= error %> </h1>
+            <label for="">Email</label>
+            <input name="email" type="email" class="control" placeholder="Coloca tu Email aqui">
+            <br>
+            <br>
+            <label for="">Contraseña</label>
+            <input name="password" type="password" class="control" placeholder="Coloca tu contraseña aqui">
+            <br>
+            <br>
+            <label for="">Mantener sesion iniciada</label>
+            <input type="checkbox" name="remember" id="">
+            <br>
+            <br>
+            <input type="submit" value="iniciar sesion">
         </form>
+        </div>
     </main>
 
     <footer>

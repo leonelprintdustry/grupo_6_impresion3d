@@ -16,14 +16,14 @@
     </header>
 
     <main>
-        <form action="home.html" method="get" class="create-form">
+        <form action="/users" method="post" class="create-form">
             <div class="formulario">
                 
 
                 <div class="control-formulario">
-                    <label class="texto-nombre">Nombre Completo</label>
-                    <input type="text" name="nombreCompleto"class="control" placeholder="NombreCompleto" id="nombreCompleto" pattern="[a-zA-Z]{1,}" required>
-                    <span class="error">Ingrese un nombre válido</span>            
+                    <label for="" class="texto-nombre">Nombre y Apellido</label>
+                    <input type="text" name="username" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern="{5,}" required>
+                    <span class="error">Ingrese un nombre válido (al menos 5 caracteres)</span>            
             </div>
             <div class="control-formulario">
                 <label class="texto">Nombre de usuario</label>
@@ -31,7 +31,7 @@
                 <span class="error">Ingrese un nombre de usuario válido (al menos ocho caracteres)</span>    
             </div>
             <div class="control-formulario">
-                <label class="texto">Email</label>
+                <label for="" class="texto">Email</label>
                 <input type="email" name="email" class="control" placeholder="E-mail">
             </div>
             <div class="control-formulario">
@@ -56,9 +56,8 @@
             </div>
 
             <div class="control-formulario">
-                <label class="texto">Contraseña</label>
-                <input type="password" name="contraseña" class="control" placeholder="Contraseña" pattern="[a-zA-Z]{8,}" required>
-                <span class="error">Ingrese una contarseña valida (al menos ocho caracteres)</span>            
+                <label for="" class="texto">Password</label>
+                <input type="password" name="password" class="control" placeholder="Contraseña">           
             </div>
 
 
@@ -73,7 +72,7 @@
 
             <div class="control-formulario">
                 <button type="reset" class="control">Borrar</button>
-                <a href="home.html"><button type="submit" class="control">Enviar</button></a>
+                <input type="submit" class="control" value="Registrarme"></button></a>
                 </div>
 
             </form>

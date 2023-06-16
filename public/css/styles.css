@@ -23,7 +23,7 @@ a {
     text-decoration: none;
 }
 
-#Basado-en-tu-ultima-visita,#Seccion-de-Ofertas {
+#Basado-en-tu-ultima-visita {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -93,6 +93,7 @@ article {
     text-align: center;
     border-radius: 5%;
     box-shadow: 10px 10px 10px 0px rgba(204,204,204,1);
+    width: 300px;
 }
 
 .img-articulos {
