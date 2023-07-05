@@ -1,4 +1,4 @@
-TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
+TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house  actualizado sprint5
 
 Breve descripción de la oferta de productos y/o servicios ofrecidos por su
 sitio:
