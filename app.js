@@ -5,8 +5,8 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
-
-//const mainRouter = require('./routes/main')
+const rememberMeMiddleware = require('./middlewares/rememberMe');
+///const mainRouter = require('./routes/main')
 const productRouter = require('./routes/productos')
 const userRouter = require('./routes/userRoutes')
 
@@ -28,6 +28,7 @@ app.use(methodOverride('_method'))
 app.use(morgan('tiny'));
 app.use(cookieParser());
 app.use(expressSession({ secret: 'este es mi secreto secretito secretoso'}));
+app.use(rememberMeMiddleware);
 
 app.use((req, res, next) => {
     const ruta = req.originalUrl + '\n';
@@ -35,21 +36,28 @@ app.use((req, res, next) => {
     next();
 });
 
-/*app.use((req, res, next) => {
-    if(req.cookies.email){
+app.use((req, res, next) => {
+    if(req.cookies.email && req.cookies.password) {
         const userModel = require('./models/user');
 
         const user = userModel.findByEmail(req.cookies.email);
 
+        if (user && user.password === req.cookies.password) {
         console.log(user);
         delete user.id;
         delete user.password;
 
         req.session.user = user;
     }
+}
 
     next();
-})*/
+})
+
+
+
+
+
 
 //app.use('/main', mainRouter);
 app.use('/products', productRouter);
@@ -58,7 +66,7 @@ app.use('/users', userRouter);
 
 
 app.listen(1112 ,() => {
-console.log('servidor corriendo en el puerto http://localhost:1112')
+console.log('servidor corriendo en el puerto http://localhost:1112/products/intro')
 });
 
 /*

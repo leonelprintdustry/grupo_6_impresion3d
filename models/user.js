@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const uuid = require('uuid');
 
+// let nextId = 1;     esto es por si se quiere guardar el id, en formato numero continuo, sigo usando uuid.v4 para tener ids unicos a nivel global
 const model = {
  // Ruta del archivo JSON
  route: '../data/users.json',
@@ -70,7 +71,9 @@ const model = {
      // Le damos el ID al usuario nuevo
      newUser.id = uuid.v4();
 
-
+    // por si necesitamos caambiar el formato de id como se esta guardando en uuid.v4
+    //newUser.id = nextId++
+     // tambien funciona esta opcion
      //newUser.id = users[users.length - 1].id + 1;
 
      // Agregamos el usuario nuevo al array original

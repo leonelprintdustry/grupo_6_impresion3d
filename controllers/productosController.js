@@ -1,4 +1,3 @@
-
 const path = require('path'); 
 const expressValidator = require('express-validator');
 
@@ -6,6 +5,9 @@ const expressValidator = require('express-validator');
 const productModel = require('../models/productos');
 
 const productController = {
+    getIntro: (req, res) => {
+        res.render('intro', {title: 'Print-Dustry'});
+       },
     getIndex: (req, res) => {
         const productos = productModel.findAll();
         const userData = req.session.user;

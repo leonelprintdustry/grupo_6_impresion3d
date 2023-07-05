@@ -4,7 +4,7 @@
     <%- include('../partials/head') %>
 
     <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/register.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
@@ -16,32 +16,48 @@
     </header>
 
     <main>
-        <div class="control-formulario">
-        <h1>Iniciar sesion</h1>
+        <section>
+        <div class="form-box">
+            <div class="form-value">
+              <h1>Iniciar sesion</h1>
         <form action="/users/login" method="post">
             <h1 style="color: red"><%= error %> </h1>
-            <label for="">Email</label>
-            <input name="email" type="email" class="control" placeholder="Coloca tu Email aqui">
-            <br>
-            <br>
-            <label for="">Contraseña</label>
-            <input name="password" type="password" class="control" placeholder="Coloca tu contraseña aqui">
-            <br>
-            <br>
-            <label for="">Mantener sesion iniciada</label>
-            <input type="checkbox" name="remember" id="">
-            <br>
-            <br>
-            <input type="submit" value="iniciar sesion">
-        </form>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input name="email" type="email" class="control">
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input name="password" type="password" class="control">
+                <label for="">Contraseña</label>
+            </div>
+            <div class="forget">
+                <label for=""><input type="checkbox" name="remember">Recuerdame <a href="#">Olvidaste tu contraseña</a></label>
+                
+            </div>
+            <button>Ingresa</button>
+            <div class="registrar">
+                <p>No tienes cuenta? <a href="./register">Crea tu cuenta</a></p>
+            </div>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        
-        <%- include('../partials/footer') %>
-        
-    </footer>
+</section>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="/users/script.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</main>
+
+<footer>
+    
+    <%- include('../partials/footer') %>
+    
+</footer>
 
 </body>
 </html>

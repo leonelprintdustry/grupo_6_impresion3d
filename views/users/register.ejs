@@ -16,7 +16,7 @@
     </header>
 
     <main>
-        <form action="/users" method="post" class="create-form">
+        <form action="/users" method="post" enctype="multipart/form-data" class="create-form">
             <div class="formulario">
                 
 
@@ -62,12 +62,16 @@
 
 
             <div class="control-formulario">        
-                <label class="texto">Confirmar contraseña:</label>
-                <input type="password" name="Confirmar" class="control" placeholder="Confirmar contraseña">
+                <label for="" class="texto">Confirmar contraseña:</label>
+                <input type="password" name="controlpassword" class="control" placeholder="Confirmar contraseña">
             </div>
             <div class="control-formulario">
                 <label class="texto">Domicilio</label>
                 <input type="text" name="domicilio" class="control" placeholder="Domicilio">
+            </div>
+            <div class="control-formulario">
+                <label for="imagen">Imagen de usuario:</label>
+            <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">
             </div>
 
             <div class="control-formulario">
