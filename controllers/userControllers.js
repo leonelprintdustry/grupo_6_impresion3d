@@ -1,3 +1,4 @@
+let db = require ("../database/models");
 const userModel = require('../models/user');
 const bcrypt = require('bcrypt');
 
@@ -16,6 +17,10 @@ const controllers = {
         res.render('register');
     },
     registerUser: (req, res) => {
+        db.Usuarios.findAll() // Agregue esta parte para la base de datos. 
+            .then(function(Usuarios){
+                res.render("listadoDeUsuarios", {Usuarios:Usuarios})
+            });
         const user = {
             ...req.body
         };

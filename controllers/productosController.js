@@ -20,6 +20,11 @@ const productController = {
     getProductDetail: (req,res) => {
         const id = Number(req.params.id);
 
+        db.Productos.findAll() // Agregue esta parte para la Base de dayos 
+            .then(function(Productos){
+                res.render("listadoDeUsuarios", {Productos:Productos}) 
+            });
+
         const productAMostrar = productModel.findById(id);
 
         if (!productAMostrar) {
