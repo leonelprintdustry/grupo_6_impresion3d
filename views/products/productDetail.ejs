@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/productdetail.css">
     <%- include('../partials/head') %>
     
-    <link rel="stylesheet" href="/css/productdetail.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        
-        <%- include('../partials/header') %>
-       
+        <%- include('../partials/header3') %>
     </header>
-
     <main>
-
-        <div class="contenedor-main">
-            <div class="primero">
-                <form action="/products/index" method="get">
-                    <div class="boton-primero">
-                        <button type="submit"><i class="fa-solid fa-arrow-left"></i> Volver</button>
+        <div class="contenedor-cardDetail">
+            <div class="card-detail">
+                <div class="shoeBackground">
+                    <form action="/products/index" method="get">
+                    <div class="gradients">
+                        <div class="gradient second" color="blue"></div>
+                        <div class="gradient" color="red"></div>
+                        <div class="gradient" color="green"></div>
+                        <div class="gradient" color="orange"></div>
+                        <div class="gradient" color="black"></div>
                     </div>
-                </form>
-                <div class="imagen-producto-grande">
-                    <img src="<%= product.imagen %>" style="width: 60%">
-                </div>
-                <div class="imagenes-pequeñas">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <div class="fotito"><img src="foto"></div>
-                    <div class="fotito"><img src="foto"></div>
-                    <div class="fotito"><img src="foto"></div>
-                    <div class="fotito"><img src="foto"></div>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </div>
-                </div>
-                <div class="segundo">
-                    <h2>Nombre: <%= product.name %> </h2>
-                    <br>
-                    <h2>Precio: <%= product.price %> </h2>
-                    <br>
-                    <h2>Descuento: <%= product.discount %> </h2>
-                    <br>
-                    <h2>Descripción: <%= product.description %> </h2>
-                    <br>
-                    <h2>Material: <%= product.materials %> </h2>
-                    <br>
-                    <h2>Color: <%= product.colors %> </h2>
-                    <br>
-                    <h2>Color: <%= product.category %> </h2>
-                    <br>
-                    <form action="nombre del archivo" method="get" class="formulario">
-                        <div class="formularios-segundos">
-                            <div class="cantidad-formulario">
-                                <div class="Cantidad">
-                                    <label for="">Cantidad:</label>
-                                    <input type="text" name="cantidad" value="" id="">
-                                    <br>
-                                </div>
-                            <br>
-                        </div>
-                        <div class="color-formulario">
-                            <h2>Seleccionar color</h2>
-                            <select name="Color">
-                                <option value="" disabled selected>Color:</option>
-                                <option value=""><%= product.color %></option>
-                            </select>
-                            <br>
-                        </div>
-                            </div>
-                            <div class="boton-segundo">
-                                <button id="<%= product.id %>" onclick="addToCart(this.id)">Agregar al carrito</button>
-                                <br>
-                            </div>
-                            <div class="estrella">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <h3>Calificacion del producto</h3>
-                            </div>
-                            <br>
-                        </form>
-                            <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
-                                <input type="submit" value='Eliminar producto'></input>
-                                <br>
-                            </form>
-                            <br>
-                            <a href="/products/<%= product.id %>/update?dataSet=item">
-                                <button>Editar Producto</button>
-                                <br>
-                            </a>  
-                           
-                        </div>
-                </div>
-                
-            <div class="tercero">
-                <div class="titular-tercero"><h2>Descripcion del producto</h2></div>
-                <div class="descripcion-tercero"><h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta sapiente, temporibus minima vero quasi recusandae cum quaerat incidunt beatae labore possimus nulla animi provident laudantium numquam vel saepe ratione.</h3></div>
-                <div class="calificacion-tercero"><h3>Calificacion del vendedor</h3><i class="fa-solid fa-star"></i></div>
-                <div class="nombre-producto-tercero"><h3>Nombre del Producto: <%= product.name %></h3></div>
-            </div>       
-        
-        
-    </main>
+                    <h1 class="nike"><Print-Dustry></Print-Dustry></h1>
+                    <img src="/images/Logo-sin-fondo.png" alt="" class="logo">
+                    <a href="#" class="share"><i class="fas fa-share-alt"></i></a>
+    
+            
 
+                    <img src="<%= product.imagen %>" alt="" class="shoe show" color="blue">
+                    <img src="<%= product.imagen %>" alt="" class="shoe" color="red">
+                    <img src="<%= product.imagen %>" alt="" class="shoe" color="green">
+                    <img src="<%= product.imagen %>" alt="" class="shoe" color="orange">
+                    <img src="<%= product.imagen %>" alt="" class="shoe" color="black">
+
+                </div>
+                <div class="info">
+                    <div class="shoeName">
+                        <div>
+                            <h1 class="big"><%= product.nombre %></h1>
+                            <span class="new">nuevo</span>
+                        </div>
+                        <h3 class="small">Print-Dustry Product</h3>
+                    </div>
+                    <div class="description">
+                        <h3 class="title">Informacion del Producto</h3>
+                        <p class="text"><%= product.descripcion %></p>
+                    </div>
+                    <div class="description">
+                        <h3 class="title">Categoria</h3>
+                        <p class="text"><%= product.nombre_categoria %></p>
+                    </div>
+                    <div class="color-container">
+                        <h3 class="title">Color</h3>
+                        <div class="colors">
+                            <span class="color active" primary="#2175f5" color="blue"></span>
+                            <span class="color" primary="#f84848" color="red"></span>
+                            <span class="color" primary="#29b864" color="green"></span>
+                            <span class="color" primary="#ff5521" color="orange"></span>
+                            <span class="color" primary="#444" color="black"></span>
+                        </div>
+                    </div>
+                    <div class="size-container">
+                        <h3 class="title">Tamaño</h3>
+                        <div class="sizes">
+                            <span class="size"> 15 x 15 x 15</span>
+                            <span class="size">20 x 20 x 20</span>
+                            <span class="size active"> 10 x 10 x 10</span>
+                        </div>
+                    </div>
+                    <div class="buy-price">
+                        <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Add to cart</a>
+                        <div class="price">
+                            <i class="fas fa-dollar-sign"></i>
+                            <h1><%= product.precio %></h1>
+                        </div>
+                    </div>
+                    
+                
+                    <div class="buy-price">
+                        <div class="buy">
+                            <button id="deleteButton" onclick="deleteProduct('<%= product.id %>')">Eliminar producto</button>
+                        </div>
+                      </div>
+                      <br>
+                        <div class="buy-price">
+                        <div class="buy">
+                        <a href="/products/<%= product.id %>/update?dataSet=item">
+                            <button>Editar Producto</button>
+                        </a>
+                        </div>  
+                        </div>
+                          
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <script src="/users/script.js"></script>
+        <script src="/users/scriptCard.js"></script>
+    </main>
     <footer>
         <%- include('../partials/footer') %>
     </footer>

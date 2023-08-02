@@ -1,42 +1,67 @@
-const { config } = require("process");
-const { DataTypes } = require("sequelize");
-const sequelize = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Productos"; // Aca en el alias se pone el nombre en plural 
-    let cols = {
-        id_producto: {
-            type: DataTypes.INTEGER,
-            primaryKey: true, 
-            autoIncrement: true
-        }, 
-        nombre: {
-            type: DataTypes.VARCHAR
-        },
-        descripcion: {
-            type: DataTypes.VARCHAR
-        },
-        precio: {
-            type: DataTypes.INTEGER
-        },
-        id_categoria: {
-            type: DataTypes.INTEGER
-        },
-        id_material: {
-            type: DataTypes.INTEGER
-        },
-        id_color: {
-            type: DataTypes.INTEGER
-        },
-        imagen_producto: {
-            type: DataTypes.INTEGER
-        },
+    const alias = 'Producto';
+  
+    const cols = {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      nombre: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      descripcion: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+      precio: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false
+      },
+      id_categoria: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Categoria',
+          key: 'id'
+        }
+      },
+      id_color: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Color',
+          key: 'id'
+        }
+      },
+      imagen: {
+        type: DataTypes.STRING, 
+        allowNull: false,
+      },
+      activo: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true, 
+      },
     };
-    let config = {
-        tableName: "productos",
-        timeamps: false // sequelize asume que la tabla tiene create si no las tiene va a fallar 
+  
+    const config = {
+      tableName: 'productos',
+      timestamps: false
     };
-    const Producto = sequelize.define(alias, cols, config) // Esta constante la llamamos igual que la carpeta
+  
+    const Producto = sequelize.define(alias, cols, config);
+  
+    Producto.associate = models => {
+      Producto.belongsTo(models.Usuario, {
+        as: 'usuario',
+        foreignKey: 'usuario_id'
+      });
+    };
+  
+    return Producto;
+  };
+  
 
-    return Producto 
-}

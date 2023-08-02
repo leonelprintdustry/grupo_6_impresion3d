@@ -6,17 +6,17 @@
 </head>
 <body>
     <header>
-        <%- include('../partials/header') %>
+        <%- include('../partials/header3') %>
     </header>
     <main>
         <div class="producto">
         <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post">
             <label for="">Nombre:</label>
-            <input type="text" name="name" value="<%= productoAModificar.name %>" id="">
+            <input type="text" name="nombre" value="<%= productoAModificar.nombre %>" id="">
             <br>
             <br>
             <label for="">Precio:</label>
-            <input type="text" name="price" value="<%= productoAModificar.price %>" id="">
+            <input type="text" name="precio" value="<%= productoAModificar.precio %>" id="">
             <br>
             <br>
             <label for="">Descuento:</label>
@@ -28,19 +28,38 @@
             <br>
             <br>
             <label for="">Descripción:</label>
-            <input type="text" name="description" value="<%= productoAModificar.description %> " id="">
+            <input type="text" name="descripcion" value="<%= productoAModificar.descripcion %> " id="">
             <br>
             <br>
             <label for="">Categoria:</label>
-            <input type="text" name="category" value="<%= productoAModificar.category %> " id="">
+            <select name="nombre_categoria" id="categoria" class="control">
+                <option value="" disabled>Selecciona una categoría</option>
+                <% categorias.forEach(categoria => { %>
+                    <% if (categoria.nombre === productoAModificar.nombre_categoria) { %>
+                        <option value="<%= categoria.nombre %>" selected><%= categoria.nombre %></option>
+                    <% } else { %>
+                        <option value="<%= categoria.nombre %>"><%= categoria.nombre %></option>
+                    <% } %>
+                <% }) %>
+            </select>
             <br>
             <br>
+            
             <label for="">Color:</label>
-            <input type="text" name="colors" value="<%= productoAModificar.colors %> " id="">
+            <select name="nombre_color" id="color" class="control">
+                <option value="" disabled>Selecciona un color</option>
+                <% colores.forEach(color => { %>
+                    <% if (color.nombre === productoAModificar.nombre_color) { %>
+                        <option value="<%= color.nombre %>" selected><%= color.nombre %></option>
+                    <% } else { %>
+                        <option value="<%= color.nombre %>"><%= color.nombre %></option>
+                    <% } %>
+                <% }) %>
+            </select>
             <br>
             <br>
             <label for="">Imagen:</label>
-            <input type="text" name="imagen" value="<%= productoAModificar.imagen %> " id="">
+            <input type="file" name="imagen" value="<%= productoAModificar.imagen %> " id="">
             <br>
             <br>
             <input type="submit" value="Guardar Cambios"></input>

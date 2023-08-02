@@ -1,8 +1,8 @@
 TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
-Sprint 5: 
+Sprint 2: 
 
-Conclusiones: tuvimos poco ttrabajo en este sprint dado a que la mayoria de cosas ya las teniamos listas desde antes de empexar.
+Conclusiones: En el caso de este Sprint al no ser muy complejo no nos ha generado dificultades en el grupo de trabajo o complejidades que hemos tenido que resolver. Nos hemos juntados dos veces y hemos dejado el Sprint resuelto. 
 
     Seguir haciendo:
 

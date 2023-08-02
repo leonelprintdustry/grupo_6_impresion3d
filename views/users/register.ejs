@@ -11,23 +11,23 @@
 <body>
     <header>
        
-        <%- include('../partials/header') %>
+        <%- include('../partials/header3') %>
        
     </header>
 
     <main>
-        <form action="/users" method="post" enctype="multipart/form-data" class="create-form">
+        <form action="/users" method="POST" enctype="multipart/form-data" class="create-form" action="/users?_method=PUT">
             <div class="formulario">
                 
 
                 <div class="control-formulario">
                     <label for="" class="texto-nombre">Nombre y Apellido</label>
-                    <input type="text" name="username" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern="{5,}" required>
+                    <input type="text" name="nombre" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern="{5,}" required>
                     <span class="error">Ingrese un nombre válido (al menos 5 caracteres)</span>            
             </div>
             <div class="control-formulario">
                 <label class="texto">Nombre de usuario</label>
-                <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{8,}" required>
+                <input type="text" name="apellido" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{8,}" required>
                 <span class="error">Ingrese un nombre de usuario válido (al menos ocho caracteres)</span>    
             </div>
             <div class="control-formulario">
@@ -38,6 +38,11 @@
                 <label class="texto">Fecha De Nacimiento:</label>
                 <input type="date" name="fecha" class="control" placeholder="Fecha de nacimiento">
             </div>
+            <div class="control-formulario">
+                <label class="texto">Edad:</label>
+                <input type="number" name="edad" class="control" placeholder="Edad" required>
+            </div>
+            
             <div class="control-formulario">
                 <label class="texto">Pais de Nacimiento:</label>
                 <select name="Pais" id="Pais" class="control">
@@ -59,12 +64,13 @@
                 <label for="" class="texto">Password</label>
                 <input type="password" name="password" class="control" placeholder="Contraseña">           
             </div>
-
-
-            <div class="control-formulario">        
-                <label for="" class="texto">Confirmar contraseña:</label>
-                <input type="password" name="controlpassword" class="control" placeholder="Confirmar contraseña">
+            <div class="control-formulario">
+                <label for="" class="texto">Confirmar Contraseña</label>
+                <input type="password" name="controlpassword" class="control" placeholder="Contraseña">           
             </div>
+
+
+           
             <div class="control-formulario">
                 <label class="texto">Domicilio</label>
                 <input type="text" name="domicilio" class="control" placeholder="Domicilio">

@@ -69,12 +69,12 @@ const model = {
      let users = this.findAll();
 
      // Le damos el ID al usuario nuevo
-     //newUser.id = uuid.v4();
+     newUser.id = uuid.v4();
 
     // por si necesitamos caambiar el formato de id como se esta guardando en uuid.v4
     //newUser.id = nextId++
      // tambien funciona esta opcion
-     newUser.id = users[users.length - 1].id + 1;
+     //newUser.id = users[users.length - 1].id + 1;
 
      // Agregamos el usuario nuevo al array original
      users.push(newUser);

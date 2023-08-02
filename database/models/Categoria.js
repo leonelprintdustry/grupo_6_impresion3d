@@ -1,27 +1,18 @@
-const { config } = require("process");
-const { DataTypes } = require("sequelize");
-const sequelize = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Categorias"; // Aca en el alias se pone el nombre en plural 
-    let cols = {
-        id_categoria: {
+    const Categoria = sequelize.define('Categoria', {
+        id: {
             type: DataTypes.INTEGER,
-            primaryKey: true, 
+            primaryKey: true,
             autoIncrement: true
-        }, 
-        nombre: {
-            type: DataTypes.VARCHAR
         },
-        activo: {
-            type: DataTypes.TINYINT
+        nombre: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
-    };
-    let config = {
-        tableName: "categorias",
-        timeamps: false // sequelize asume que la tabla tiene create si no las tiene va a fallar 
-    };
-    const categorias = sequelize.define(alias, cols, config) // Esta constante la llamamos igual que la carpeta
+    }, {
+        tableName: 'categorias',
+        timestamps: false
+    });
 
-    return categorias 
-}
+    return Categoria;
+};

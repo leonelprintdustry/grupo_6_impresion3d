@@ -1,45 +1,52 @@
-const { config } = require("process");
-const { DataTypes } = require("sequelize");
-const sequelize = require("sequelize");
-
 module.exports = (sequelize, DataTypes) => {
-    let alias = "Usuarios"; // Aca en el alias se pone el nombre en plural 
-    let cols = {
-        id_usuario: {
+    const alias = 'Usuario';
+
+    const cols = {
+        id: {
             type: DataTypes.INTEGER,
-            primaryKey: true, 
+            primaryKey: true,
             autoIncrement: true
-        }, 
-        nombre_apllido: {
-            type: DataTypes.VARCHAR
         },
-        nombre_usuario: {
-            type: DataTypes.VARCHAR
+        nombre: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        apellido: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         email: {
-            type: DataTypes.VARCHAR
+            type: DataTypes.STRING,
+            allowNull: false
         },
-        fecha_nacimiento: {
-            type: DataTypes.DATE
-        }, 
-        pais_nacimiento: {
-            type: DataTypes.TEXT
-        }, 
-        domicilio: {
-            type: DataTypes.TEXT
-        }, 
-        cotrasena: {
-            type: DataTypes.VARCHAR
-        }, 
-        imagen_usuario: {
-            type: DataTypes.VARCHAR
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
+        edad: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     };
-    let config = {
-        tableName: "usuarios",
-        timeamps: false // sequelize asume que la tabla tiene create si no las tiene va a fallar 
-    };
-    const Usuario = sequelize.define(alias, cols, config) // Esta constante la llamamos igual que la carpeta
 
-    return Usuario 
-}
+    const config = {
+        tableName: 'usuarios',
+        timestamps: false
+    };
+
+    const Usuario = sequelize.define(alias, cols, config);
+
+   Usuario.associate = models => {
+    Usuario.hasMany(models.Producto, {
+        as: 'productos', 
+        foreignKey: 'usuario_id',
+    });
+
+    Usuario.hasMany(models.Carrito, {
+        as: 'carritos',
+        foreignKey: 'usuario_id'
+    });
+   }
+    return Usuario;
+};
+

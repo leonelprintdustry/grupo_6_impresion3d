@@ -1,127 +1,231 @@
-const path = require('path'); 
-const expressValidator = require('express-validator');
-
-
-const productModel = require('../models/productos');
+const { Producto, Categoria, Color } = require('../database/models');
+const { check, validationResult } = require('express-validator');
 
 const productController = {
     getIntro: (req, res) => {
-        res.render('intro', {title: 'Print-Dustry'});
-       },
-    getIndex: (req, res) => {
-        const productos = productModel.findAll();
-        const userData = req.session.user;
-        res.render('index', { title: 'Home', productos, userData: userData});
+        res.render('intro', { title: 'Print-Dustry' });
     },
 
-    getProductCart: (req,res) => {
+    getIndex: async (req, res) => {
+        //try {
+           /* const productos = await Producto.findAll();
+            const userData = req.session.user;
+            res.render('index', { title: 'Home', productos, userData: userData });*/
+       // } catch (error) {
+           // console.error(error);
+            //res.status(500).send('Error al obtener los productos');
+
+       // }
+       try {
+        const productos = await Producto.findAll({
+          where: { activo: true }, // Filtrar solo productos activos
+        });
+        const userData = req.session.user;
+        res.render('index', { title: 'Home', productos, userData: userData });
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener los productos');
+      }
+    },
+
+    getProductCart: (req, res) => {
         res.render('productCart');
     },
-    getProductDetail: (req,res) => {
-        const id = Number(req.params.id);
 
-        db.Productos.findAll() // Agregue esta parte para la Base de dayos 
-            .then(function(Productos){
-                res.render("listadoDeUsuarios", {Productos:Productos}) 
+    getProductDetail: async (req, res) => {
+        try {
+            const id = Number(req.params.id);
+            const productAMostrar = await Producto.findByPk(id);
+
+            if (!productAMostrar) {
+                return res.send('Error de id');
+            }
+
+            res.render('productDetail', { product: productAMostrar });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al obtener el detalle del producto');
+        }
+    },
+
+    getUpdate: async (req, res) => {
+      try {
+        const id = Number(req.params.id);
+        const productoAModificar = await Producto.findByPk(id);
+  
+        if (!productoAModificar) {
+          return res.send('Error de id');
+        }
+   
+        const categorias = await Categoria.findAll();
+        const colores = await Color.findAll();
+
+        res.render('editProduct', { productoAModificar: productoAModificar, title: 'edit', categorias, colores });
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener el producto para modificar');
+      }
+    },
+    getCreate: async (req, res) => {
+            try {
+              // Obtener las listas de categorías y colores desde la base de datos
+              const categorias = await Categoria.findAll();
+              const colores = await Color.findAll();
+        
+              res.render('create', { title: 'create', errors: [], values: {}, categorias, colores });
+            } catch (error) {
+              console.error(error);
+              res.status(500).send('Error al obtener los datos para el formulario de creación');
+            }
+        },
+    deleteProduct: async (req, res) => {
+        /*tr {
+            const id = Number(req.params.id);
+            await Producto.destroy({
+                where: { id }
+            });
+            res.redirect('/products/index');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al eliminar el producto');
+        }*/
+        try {
+          const id = Number(req.params.id);
+  
+          // Realizar una consulta directa para actualizar el campo 'activo'
+          await Producto.update(
+              { activo: 0 },
+              { where: { id } }
+          );
+  
+          res.redirect('/products/index');
+      } catch (error) {
+          console.error(error);
+          res.status(500).send('Error al cambiar el estado del producto a inactivo');
+      }
+    
+        },
+
+    updateProduct: async (req, res) => {
+        try {
+            const id = Number(req.params.id);
+            const nuevosDatos = req.body;
+
+            await Producto.update(nuevosDatos, {
+                where: { id }
             });
 
-        const productAMostrar = productModel.findById(id);
-
-        if (!productAMostrar) {
-            return res.send('Error de id');
+            res.redirect('/products/index');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al actualizar el producto');
         }
-    
-        res.render('productDetail', { product : productAMostrar });
     },
 
-    getProductAdd: (req,res) => {
-        const id = Number(req.params.id);
-      
-        const itemAModificar = productModel.findById(id)
-      
-        if (!itemAModificar) {
-          return res.send('error de id');
-        }
-      
-        res.render('create', { itemAModificar: itemAModificar, title: 'add' });
-    },
-    // @GET 1. /products (GET)
-      getProducts: (req, res) => {
-        const productos = productModel.findAll();
-        res.render('index', {
-            title: 'Productos',
-            productos
-        });
-    },
-    getUpdate: (req, res) => {
-        const id = Number(req.params.id);
-      
-        const productoAModificar = productModel.findById(id)
-      
-        if (!productoAModificar) {
-          return res.send('error de id');
-        }
-      
-        res.render('editProduct', { productoAModificar: productoAModificar, title: 'edit' });
-    },
-    
-    getCreate: (req, res) => {
-        res.render('create', { title: 'create', errors: [], values: {} });
-     },
+    postProduct: async (req, res) => {
+       /* try {
+            const validation = expressValidator.validationResult(req);
 
-    deleteProduct: (req, res) => {
-        const id = Number(req.params.id);
-    
-        productModel.deleteById(id);
-    
-         res.redirect('/products/index');
-    
-    
-    },
-   
-    updateProduct: (req, res) => {
-        const id = Number(req.params.id);
-        const nuevosDatos = req.body;
+            if (validation.errors.length > 0) {
+                const userData = req.session.user;
+                return res.render('create', { errors: validation.errors, values: req.body, userData });
+            }
 
-        /*nuevosDatos.name = nuevosDatos.title;
-        nuevosDatos.description = nuevosDatos.descripciones;
-        nuevosDatos.price = Number(nuevosDatos.precio);
-        nuevosDatos.discount = nuevosDatos.descuento;
-        nuevosDatos.imagen = '/images/productos/' + req.files[0].filename; 
-        */
-        /*if (req.files && req.files.length > 0) {
-        nuevosDatos.imagen = '/images/productos/' + req.files[0].filename;
-        }*/
+            let datos = req.body;
+            datos.name = datos.name;
+            datos.discount = datos.discount;
+            datos.description = datos.description;
+            datos.price = Number(datos.price);
+            datos.imagen = '/images/productos/' + req.files[0].filename;
 
-        productModel.updateById(id, nuevosDatos);
-        
-        res.redirect('/products/index' );
-    },
+            await Producto.create(datos);
 
-    postProduct: (req, res) => {
-        const validation = expressValidator.validationResult(req);
-    
-        if (validation.errors.length > 0) {
+            const productos = await Producto.findAll();
             const userData = req.session.user;
-            return res.render('create', { errors: validation.errors, values: req.body, userData });
+            res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al crear el producto');
+        }*/
+        try {
+            const validation = validationResult(req);
+            if (!validation.isEmpty()) {
+              const userData = req.session.user;
+              // Obtener las listas de categorías y colores desde la base de datos
+              const categorias = await Categoria.findAll();
+              const colores = await Color.findAll();
+      
+              return res.render('create', { errors: validation.array(), values: req.body, userData, categorias, colores });
+            }
+      
+            let datos = req.body;
+            datos.name = datos.nombre;
+            datos.discount = datos.discount;
+            datos.description = datos.description;
+            datos.price = Number(datos.precio);
+            datos.imagen = '/images/productos/' + req.files[0].filename;
+      
+
+
+            // Buscar el id de la categoría y el color basado en las palabras recibidas
+            const categoria = await Categoria.findOne({ where: { nombre: datos.nombre_categoria } });
+            const color = await Color.findOne({ where: { nombre: datos.nombre_color } });
+      
+            if (!categoria || !color) {
+              return res.status(400).send('Categoría o color inválido.');
+            }
+      
+            datos.id_categoria = categoria.id;
+            datos.id_color = color.id;
+      
+            // Crear el producto con los datos actualizados
+            await Producto.create(datos);
+      
+            const productos = await Producto.findAll();
+            const userData = req.session.user;
+            res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData });
+          } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al crear el producto');
+          }
+        },
+      
+        
+
+
+    getProducts: async (req, res) => {
+        try {
+            const searchTerm = req.query.q; // Obtener el término de búsqueda de la barra de búsqueda
+
+            // Si no se ingresó ningún término de búsqueda, simplemente muestra todos los productos
+            if (!searchTerm) {
+                const productos = await Producto.findAll();
+                return res.render('index', {
+                    title: 'Productos',
+                    productos
+                });
+            }
+
+            // Si se ingresó un término de búsqueda, realiza la búsqueda utilizando el término
+            const productos = await Producto.findAll({
+                where: {
+                    name: {
+                        $like: `%${searchTerm}%`
+                    }
+                }
+            });
+
+            res.render('index', {
+                title: 'Productos',
+                productos,
+                searchTerm // Pasar el término de búsqueda para mostrarlo nuevamente en la barra de búsqueda
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al obtener los productos');
         }
-    
-        let datos = req.body;
-        datos.name = datos.name;
-        datos.discount = datos.discount;
-        datos.description = datos.description;
-        datos.price = Number(datos.price);
-        datos.imagen = '/images/productos/' + req.files[0].filename; 
-    
-        productModel.createOne(datos);
-    
-        const productos = productModel.findAll();
-        const userData = req.session.user; 
-        res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData}); 
-    },
+    }
 };
-    
 
+module.exports = productController;
 
-
-module.exports = productController

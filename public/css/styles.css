@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 
+
 header {
+    background-image: linear-gradient(135deg, #1465bb 30%, #ff0000 100%);
     text-align: center;
     position: fixed;
     top: 0;
     z-index: 100;
-    background-image: linear-gradient(135deg, #1465bb 30%, #ff0000 100%);
-    
+    /*background-color: #0026fa;*/
     padding-bottom: 20px;
     width: 100vw;
 }
@@ -16,7 +17,7 @@ header {
 body {
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(135deg, #1465bb 30%, #ff0000 100%);
-    
+    /*background-color: #007CFA;*/
     color: #ebebeb;
 }
 
@@ -35,7 +36,8 @@ a {
 footer {
     text-align: center;
     margin-top: 15px;
-    background-color: #0026fa;
+    background-image: linear-gradient(135deg, #1465bb 20%, #ff0000 100%);
+    /*background-color: #0026fa;*/
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -87,7 +89,7 @@ ul {
     color: yellow;
 }
 
-article {
+/*article {
     margin-bottom: 30px;
     border-top: 1px solid #ebebeb;
     padding: 15px 15px 15px 15px;
@@ -96,9 +98,9 @@ article {
     border-radius: 5%;
     box-shadow: 10px 10px 10px 0px rgba(204,204,204,1);
     width: 300px;
-}
+}*/
 
-.img-articulos {
+/*.img-articulos {
     border-radius: 10px;
     height: 200px;
     width: 200px;
@@ -128,7 +130,7 @@ article:hover {
 .descripciones {
     font-size: 16px;
     color: rgb(118, 116, 116);
-}
+}*/
 
 .fa-solid.fa-truck-fast {
     border: 2px #39b54a solid;
@@ -188,5 +190,161 @@ article:hover {
   }
   
 
+  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap" rel="stylesheet');
 
+  * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  body{
+      /*display: flex;*/
+      justify-content: center;
+      align-items: center;
+      background: #131313;
+      height: 100%;
+      /*width: 90%;*/
+      background: url('/images/wallpaper6.jpg');
+    
+  }
+  
+  
+  .contenedor-card{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      flex-wrap: wrap;
+      transform-style: preserve-3d;
+      margin: 10%;
+  }
+  .contenedor-card .box-card{
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 30px;
+      background: #232323;
+      border-radius: 20px;
+      transform-style: preserve-3d;
+  }
+  .contenedor-card .box-card::before{
+      content: 'HEL';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 6em;
+      font-weight: 900;
+      color: #fff;
+      font-style: italic;
+      opacity: 0;
+      transition: 0.5s ;
+  }
+  .contenedor-card .box-card::after{
+      content: 'ITA';
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 5em;
+      font-weight: 900;
+      color: #fff;
+      font-style: italic;
+      opacity: 0;
+      transition: 0.5s ;
+  }
+  .contenedor-card .box-card:hover::before,
+  .contenedor-card .box-card:hover::after{
+      opacity: 0.04;
+  }
+  .contenedor-card .box-card .name{
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      transform-style: preserve-3d;
+      transform: translate3d(0,0,75px);
+      transition: 0.5s;
+      opacity: 0;
+      z-index: 10;
+  }
+  .contenedor-card .box-card:hover .name{
+      top: 40px;
+      opacity: 1;
+  }
+  
+  .contenedor-card .box-card .buy {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%,0,75px);
+      color: #fff;
+      background: #333;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.5s;
+      opacity: 0;
+      z-index: 10;
+  }
+  .contenedor-card .box-card:hover .buy{
+      bottom: 30px;
+      opacity: 1;
+  }
+  .contenedor-card .box-card .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transition: 0.5s;
+      background: #fff;
+      transform-style: preserve-3d;
+      z-index: 10;
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 50px);
+  }
+  .contenedor-card .box-card:hover .circle{
+      opacity: 1;
+  
+  }
+  .contenedor-card .box-card .product{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 300px;
+      transition: 0.5s;
+      z-index: 11;
+      transition: 0.5s;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 0px) rotate(-15deg);
+  }
+  .contenedor-card .box-card:hover .product{
+      transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+  
+  }
+  .contenedor-card .box-card:nth-child(1) .circle,
+  .contenedor-card .box-card:nth-child(1) .buy {
+      background: #379bf7;
+  }
+  
+  .contenedor-card .box-card:nth-child(2) .circle,
+  .contenedor-card .box-card:nth-child(2) .buy {
+      background: #9bdc28;
+  }
+  
+  .contenedor-card .box-card:nth-child(3) .circle,
+  .contenedor-card .box-card:nth-child(3) .buy {
+      background: #fb4b4f;
+  }
+  
+  @media (max-width: 600px) {
+      .contenedor-card {
+        justify-content: space-between;
+      }
+    }
 

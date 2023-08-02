@@ -1,4 +1,8 @@
-TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house  actualizado sprint5
+Diagrama de la base de datos: file:///C:/Users/loshu/Downloads/DiagramaBaseDeDatosPDF.drawio.pdf
+
+link base de datos: http://localhost/phpmyadmin/index.php?route=/database/structure&db=printdustry
+
+TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
 Breve descripción de la oferta de productos y/o servicios ofrecidos por su
 sitio:
