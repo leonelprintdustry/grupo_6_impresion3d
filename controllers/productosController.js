@@ -1,4 +1,4 @@
-const { Producto, Categoria, Color } = require('../database/models');
+const { Producto, Categoria, Color, Material } = require('../database/models');
 const { check, validationResult } = require('express-validator');
 
 const productController = {
@@ -59,8 +59,9 @@ const productController = {
    
         const categorias = await Categoria.findAll();
         const colores = await Color.findAll();
+        const materiales = await Material.findAll();
 
-        res.render('editProduct', { productoAModificar: productoAModificar, title: 'edit', categorias, colores });
+        res.render('editProduct', { productoAModificar: productoAModificar, title: 'edit', categorias, colores, materiales });
       } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener el producto para modificar');
@@ -71,8 +72,9 @@ const productController = {
               // Obtener las listas de categorías y colores desde la base de datos
               const categorias = await Categoria.findAll();
               const colores = await Color.findAll();
+              const materiales = await Material.findAll();
         
-              res.render('create', { title: 'create', errors: [], values: {}, categorias, colores });
+              res.render('create', { title: 'create', errors: [], values: {}, categorias, colores, materiales });
             } catch (error) {
               console.error(error);
               res.status(500).send('Error al obtener los datos para el formulario de creación');
@@ -154,8 +156,9 @@ const productController = {
               // Obtener las listas de categorías y colores desde la base de datos
               const categorias = await Categoria.findAll();
               const colores = await Color.findAll();
+              const materiales = await Material.findAll();
       
-              return res.render('create', { errors: validation.array(), values: req.body, userData, categorias, colores });
+              return res.render('create', { errors: validation.array(), values: req.body, userData, categorias, colores, materiales });
             }
       
             let datos = req.body;
@@ -170,13 +173,15 @@ const productController = {
             // Buscar el id de la categoría y el color basado en las palabras recibidas
             const categoria = await Categoria.findOne({ where: { nombre: datos.nombre_categoria } });
             const color = await Color.findOne({ where: { nombre: datos.nombre_color } });
+            const material = await Material.findOne({ where: { nombre: datos.nombre_material } });
       
-            if (!categoria || !color) {
-              return res.status(400).send('Categoría o color inválido.');
+            if (!categoria || !color || !material) {
+              return res.status(400).send('Categoría ,color o Material inválido.');
             }
       
             datos.id_categoria = categoria.id;
             datos.id_color = color.id;
+            datos.id_material = material.id;
       
             // Crear el producto con los datos actualizados
             await Producto.create(datos);

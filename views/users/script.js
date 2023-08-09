@@ -13,6 +13,10 @@ const sr = ScrollReveal ({
     reset: true
 });
 
+function redirectToEditProduct(productId) {
+    window.location.href = `/products/${productId}/update?dataSet=item`;
+}
+
 // Llama a sr.reveal() para cada elemento que deseas animar
 sr.reveal('.hero-text', {delay: 200, origin: 'top'});
 sr.reveal('.hero-img', {delay: 450, origin: 'top'});

@@ -29,14 +29,22 @@ module.exports = {
         }
       },
       id_color: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'colores',
-          key: 'id'
-        }
-      },
-      createdAt: {
+      type: Sequelize.INTEGER,
+       allowNull: false,
+       references: {
+         model: 'colores',
+         key: 'id'
+       }
+     },
+     id_material: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'materiales',
+        key: 'id'
+      }
+     },
+     createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')

@@ -230,7 +230,7 @@ article:hover {
       transform-style: preserve-3d;
   }
   .contenedor-card .box-card::before{
-      content: 'HEL';
+      content: '3D - 3D';
       position: absolute;
       top: 20px;
       left: 20px;
@@ -242,7 +242,7 @@ article:hover {
       transition: 0.5s ;
   }
   .contenedor-card .box-card::after{
-      content: 'ITA';
+      content: '3D - 3D';
       position: absolute;
       bottom: 20px;
       right: 20px;

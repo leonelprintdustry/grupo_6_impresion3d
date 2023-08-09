@@ -33,7 +33,7 @@
     
             
 
-                    <img src="<%= product.imagen %>" alt="" class="shoe show" color="blue">
+                    <img src="<%= product.imagen %>" alt="" class="shoe show" color="blue" width="250px">
                     <img src="<%= product.imagen %>" alt="" class="shoe" color="red">
                     <img src="<%= product.imagen %>" alt="" class="shoe" color="green">
                     <img src="<%= product.imagen %>" alt="" class="shoe" color="orange">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="description">
                         <h3 class="title">Categoria</h3>
-                        <p class="text"><%= product.nombre_categoria %></p>
+                        <p class="text"><%= product.categoria %></p>
                     </div>
                     <div class="color-container">
                         <h3 class="title">Color</h3>
@@ -69,13 +69,13 @@
                     <div class="size-container">
                         <h3 class="title">Tamaño</h3>
                         <div class="sizes">
-                            <span class="size"> 15 x 15 x 15</span>
-                            <span class="size">20 x 20 x 20</span>
-                            <span class="size active"> 10 x 10 x 10</span>
+                            <span class="size"> 15 x 15</span>
+                            <span class="size">20 x 20</span>
+                            <span class="size active"> 10 x 10</span>
                         </div>
                     </div>
                     <div class="buy-price">
-                        <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Add to cart</a>
+                        <a href="/products/<%= product.id %>/addToCart" class="buy"><i class="fas fa-shopping-cart"></i>Add to cart</a>
                         <div class="price">
                             <i class="fas fa-dollar-sign"></i>
                             <h1><%= product.precio %></h1>
@@ -85,17 +85,18 @@
                 
                     <div class="buy-price">
                         <div class="buy">
-                            <button id="deleteButton" onclick="deleteProduct('<%= product.id %>')">Eliminar producto</button>
+                            <a href="/products/<%= product.id %>/delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar Producto</a>
+                            </a>
                         </div>
-                      </div>
-                      <br>
-                        <div class="buy-price">
+                    </div>
+                    <br>
+                    <div class="buy-price">
                         <div class="buy">
-                        <a href="/products/<%= product.id %>/update?dataSet=item">
-                            <button>Editar Producto</button>
-                        </a>
-                        </div>  
+                            <a href="/products/<%= product.id %>/update?dataSet=item">Editar producto</a>
+                            </a>
                         </div>
+                    </div>
+                    
                           
                 </div>
             </div>

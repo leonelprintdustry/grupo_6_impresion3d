@@ -1,2 +1,3 @@
 npx sequelize-cli migration:generate --name nombre-migración
+
 npx sequelize-cli db:migrate

@@ -70,15 +70,15 @@
             <br>
             <br>
             
-            <label class="texto">Material:</label>
-                <select name="materials" id="materials" class="control">
-                    <option value="abs">ABS</option>
-                    <option value="pla">PLA</option>
-                    <option value="tpu">TPU</option>
-                    <option value="pa-12">PA-12</option>
-                </select>
-                <br>
-                <br>
+            <label for="material">Material:</label>
+            <select name="nombre_material" id="material" class="control">
+                <option value="" disabled selected>Selecciona un material</option>
+                <% materiales.forEach(material => { %>
+                    <option value="<%= material.nombre %>"><%= material.nombre %></option>
+                <% }) %>
+            </select>
+            <br>
+            <br>
                
             <label for="imagen">Imagen:</label>
             <input type="file" multiple accept=".jpg, .jpeg, .png" name="imagen" id="imagen">

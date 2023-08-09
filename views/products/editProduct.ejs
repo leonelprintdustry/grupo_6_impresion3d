@@ -24,7 +24,16 @@
             <br>
             <br>
             <label for="">Material:</label>
-            <input type="text" name="materials" value="<%= productoAModificar.materials %> " id="">
+            <select name="nombre_material" id="material" class="control">
+                <option value="" disabled>Selecciona un material</option>
+                <% materiales.forEach(material => { %>
+                    <% if (material.nombre === productoAModificar.nombre_material) { %>
+                        <option value="<%= material.nombre %>" selected><%= material.nombre %></option>
+                    <% } else { %>
+                        <option value="<%= material.nombre %>"><%= material.nombre %></option>
+                    <% } %>
+                <% }) %>
+            </select>
             <br>
             <br>
             <label for="">Descripción:</label>

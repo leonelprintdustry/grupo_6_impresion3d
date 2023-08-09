@@ -1,4 +1,4 @@
-// productos.js
+
 const express = require('express');
 const path = require('path');
 const router = express.Router();
@@ -36,7 +36,7 @@ router.get('/intro', productosController.getIntro);
 // GET /products/create
 router.get('/create', authMiddlewares.allowSignedIn, productosController.getCreate);
 
-router.delete('/:id/delete', authMiddlewares.allowSignedIn, productosController.deleteProduct );
+router.post('/:id/delete', authMiddlewares.allowSignedIn, productosController.deleteProduct );
 
 router.get('/:id/detail', authMiddlewares.allowSignedIn, productosController.getProductDetail );
 

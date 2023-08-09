@@ -36,6 +36,14 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
+        id_material: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          references: {
+            model: 'Material',
+            key: 'id'  
+      }
+    },
       imagen: {
         type: DataTypes.STRING, 
         allowNull: false,
