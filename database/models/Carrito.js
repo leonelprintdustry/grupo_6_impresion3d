@@ -37,7 +37,19 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'producto_id'
       });
     };
+
+    Carrito.obtenerProductosEnCarritoDelUsuario = async userId => {
+      try {
+          const productsInCart = await Carrito.findAll({
+              where: { usuario_id: userId },
+              include: { model: models.Producto, as: 'producto' } 
+          });
+          return productsInCart;
+      } catch (error) {
+          throw error;
+      }
+  };
   
     return Carrito;
-  };
+    };
   

@@ -44,6 +44,8 @@ router.get('/:id/detail', authMiddlewares.allowSignedIn, productosController.get
 router.get('/:id/update', authMiddlewares.allowSignedIn,productosController.getUpdate);
 
 
+router.get('/:id/addToCart', authMiddlewares.allowSignedIn, productosController.addToCart);
+
 
 router.get(
   '/:id/edit',

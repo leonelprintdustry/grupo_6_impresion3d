@@ -1,5 +1,6 @@
-const { Producto, Categoria, Color, Material } = require('../database/models');
+const { Producto, Categoria, Color, Material, Carrito } = require('../database/models');
 const { check, validationResult } = require('express-validator');
+const { obtenerProductosEnCarritoDelUsuario } = require('../database/models/Carrito');
 
 const productController = {
     getIntro: (req, res) => {
@@ -28,9 +29,18 @@ const productController = {
       }
     },
 
-    getProductCart: (req, res) => {
-        res.render('productCart');
+    getProductCart: async (req, res) => {
+        try {
+            // obtener los productos en el carrito del usuario desde la base de datos
+            const productsInCart = await obtenerProductosEnCarritoDelUsuario(req.session.user.id);
+            const userData = req.session.user; // obtenego los datos del usuario desde la sesión
+            res.render('productCart', { productsInCart, userData });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al obtener los productos en el carrito');
+        }
     },
+    
 
     getProductDetail: async (req, res) => {
         try {
@@ -195,7 +205,38 @@ const productController = {
           }
         },
       
-        
+         
+      addToCart: async (req, res) => {
+        try {
+        const productId = Number(req.params.id);
+        const userId = req.session.user.id; // Obtener el ID del usuario desde la sesión
+
+        // Busca el producto por su ID
+        const product = await Producto.findByPk(productId);
+
+        if (!product) {
+            return res.status(404).send('Producto no encontrado');
+        }
+
+        // Calcula el precio total y la cantidad 
+        const cantidad = 1;
+        const precioTotal = product.precio * cantidad;
+
+        // Crea un nuevo registro en la tabla del carrito
+        await Carrito.create({
+            cantidad,
+            precio_total: precioTotal,
+            usuario_id: userId,
+            producto_id: productId
+        });
+
+        res.redirect('/products/index');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al agregar el producto al carrito');
+    }
+},
+
 
 
     getProducts: async (req, res) => {

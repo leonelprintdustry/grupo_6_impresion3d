@@ -82,13 +82,20 @@
                         </div>
                     </div>
                     
-                
                     <div class="buy-price">
                         <div class="buy">
-                            <a href="/products/<%= product.id %>/delete" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar Producto</a>
-                            </a>
+                            <a href="/products/<%= product.id %>/delete" onclick="return confirmDelete();">Eliminar Producto</a>
                         </div>
                     </div>
+                              
+                    <script>
+                        function confirmDelete() {
+                            return confirm('¿Estás seguro de que deseas eliminar este producto?');
+                        }
+                    </script>
+                    
+                      
+                  
                     <br>
                     <div class="buy-price">
                         <div class="buy">
