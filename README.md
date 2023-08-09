@@ -1,6 +1,9 @@
 Diagrama de la base de datos: file:///C:/Users/loshu/Downloads/DiagramaBaseDeDatosPDF.drawio.pdf
 
-link base de datos: http://localhost/phpmyadmin/index.php?route=/database/structure&db=printdustry
+link base de datos: http://localhost/phpmyadmin/index.php?route=/database/structure&db=printdustrybase
+http://localhost/phpmyadmin/index.php?route=/export
+
+
 
 TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
 
