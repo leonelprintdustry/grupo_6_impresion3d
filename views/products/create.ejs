@@ -31,11 +31,14 @@
                     <% }  else {%>
                         <label for="">Nombre:</label>
                     <% }  %>
-                    <input type="text" value="<%= values.title %>" name="nombre" id="" class="control" placeholder="Coloca tu nombre aqui">
+                    <input type="text" value="<%= values.title %>" name="nombre" id="" class="control" placeholder="Coloca tu nombre aqui"  pattern=".{5,}" required>
+                    <span class="error">Ingrese un nombre válido (al menos 5 caracteres)</span>  
                     <br>
                     <br>
                     <label for="">Descripcion:</label>
-                    <input type="text" name="descripcion" id="description" class="control" placeholder="Coloca la descripcion del producto">
+                    <input type="text" name="descripcion" id="description" class="control" placeholder="Coloca la descripcion del producto" pattern=".{20,}" required>
+                    <span class="error">Ingrese una descripcion valida para el producto (al menos 20 caracteres)</span>  
+
                     <br>
                     <br>
                     <% if (errors.find(error => error.path === 'price')) { %>

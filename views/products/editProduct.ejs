@@ -12,7 +12,8 @@
         <div class="producto">
         <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post" enctype="multipart/form-data">
             <label for="">Nombre:</label>
-            <input type="text" name="nombre" value="<%= productoAModificar.nombre %>" id="">
+            <input type="text" name="nombre" value="<%= productoAModificar.nombre %>" id="" pattern=".{5,}" required>
+            <span class="error">Ingrese un nombre válido (al menos 5 caracteres)</span>    
             <br>
             <br>
             <label for="">Precio:</label>
@@ -37,7 +38,8 @@
             <br>
             <br>
             <label for="">Descripción:</label>
-            <input type="text" name="descripcion" value="<%= productoAModificar.descripcion %> " id="">
+            <input type="text" name="descripcion" value="<%= productoAModificar.descripcion %> " id="" pattern=".{20,}" required>
+            <span class="error">Ingrese una descripcion valida (al menos 20 caracteres)</span>    
             <br>
             <br>
             <label for="">Categoria:</label>

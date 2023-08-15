@@ -11,12 +11,18 @@ const controllers = {
     },
      
     getRegister: (req, res) => {
-        res.render('register');
+        res.render('register', { error: '' });
     },
-    registerUser: (req, res) => {
+    registerUser: async (req, res) => {
         const user = {
           ...req.body
         };
+
+        const existingUser = await Usuario.findOne({ where: { email: user.email } });
+        if (existingUser) {
+            return res.render('register', { error: 'El correo electrónico ya está registrado' });
+        }
+
         if (!user.password || !user.controlpassword) {
             return res.redirect('/users/register?error=Debe ingresar una contraseña y confirmarla');
         }

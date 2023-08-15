@@ -22,17 +22,21 @@
 
                 <div class="control-formulario">
                     <label for="" class="texto-nombre">Nombre y Apellido</label>
-                    <input type="text" name="nombre" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern="{5,}" required>
-                    <span class="error">Ingrese un nombre válido (al menos 5 caracteres)</span>            
+                    <input type="text" name="nombre" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern=".{2,}" required>
+                    <span class="error">Ingrese un nombre válido (al menos 2 caracteres)</span>            
             </div>
             <div class="control-formulario">
                 <label class="texto">Nombre de usuario</label>
-                <input type="text" name="apellido" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{8,}" required>
-                <span class="error">Ingrese un nombre de usuario válido (al menos ocho caracteres)</span>    
+                <input type="text" name="apellido" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{5,}" required>
+                <span class="error">Ingrese un nombre de usuario válido (al menos cinco caracteres)</span>    
             </div>
             <div class="control-formulario">
                 <label for="" class="texto">Email</label>
-                <input type="email" name="email" class="control" placeholder="E-mail">
+                <input type="email" name="email" class="control" placeholder="E-mail" required>
+                <span class="error">Ingrese un email</span>  
+                <% if (error === 'El correo electrónico ya está registrado') { %>
+                    <p class="error-message"><%= error %></p>
+                <% } %> 
             </div>
             <div class="control-formulario">
                 <label class="texto">Fecha De Nacimiento:</label>
@@ -62,11 +66,14 @@
 
             <div class="control-formulario">
                 <label for="" class="texto">Password</label>
-                <input type="password" name="password" class="control" placeholder="Contraseña">           
+                <input type="password" name="password" class="control" placeholder="Contraseña"  pattern="{8,}" required>           
+                <span class="error">Ingrese una contaseña valida (al menos 8 caracteres)</span>  
+                  
             </div>
             <div class="control-formulario">
                 <label for="" class="texto">Confirmar Contraseña</label>
-                <input type="password" name="controlpassword" class="control" placeholder="Contraseña">           
+                <input type="password" name="controlpassword" class="control" placeholder="Contraseña"  pattern="{8,}" required>           
+                <span class="error">Ingrese una contaseña valida (al menos 8 caracteres)</span>  
             </div>
 
 
