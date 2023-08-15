@@ -10,7 +10,7 @@
     </header>
     <main>
         <div class="producto">
-        <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post">
+        <form action="/products/<%= productoAModificar.id %>/edit?_method=put" method="post" enctype="multipart/form-data">
             <label for="">Nombre:</label>
             <input type="text" name="nombre" value="<%= productoAModificar.nombre %>" id="">
             <br>
@@ -68,7 +68,8 @@
             <br>
             <br>
             <label for="">Imagen:</label>
-            <input type="file" name="imagen" value="<%= productoAModificar.imagen %> " id="">
+            <img src="<%= productoAModificar.imagen %>" alt="Imagen del producto">
+            <input type="file" name="imagen">
             <br>
             <br>
             <input type="submit" value="Guardar Cambios"></input>

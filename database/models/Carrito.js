@@ -14,7 +14,23 @@ module.exports = (sequelize, DataTypes) => {
       precio_total: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
-      }
+      },
+      usuario_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Usuario',
+          key: 'id'
+        }
+      },
+      producto_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Producto',
+          key: 'id'
+        }
+      },
     };
   
     const config = {
@@ -38,11 +54,11 @@ module.exports = (sequelize, DataTypes) => {
       });
     };
 
-    Carrito.obtenerProductosEnCarritoDelUsuario = async userId => {
+    Carrito.obtenerProductosEnCarritoDelUsuario = async (userId) => {
       try {
           const productsInCart = await Carrito.findAll({
               where: { usuario_id: userId },
-              include: { model: models.Producto, as: 'producto' } 
+              include: { model: sequelize.models.Producto, as: 'producto' } 
           });
           return productsInCart;
       } catch (error) {

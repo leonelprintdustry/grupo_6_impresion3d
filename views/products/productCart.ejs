@@ -24,25 +24,23 @@
                 <h1><%= userData.email %></h1>
             <% } %>
         </nav>
-        
-        <div class="Productos">
-            <h3>Tu Carrito de Compras</h3>
-           
-            <section id="Tu-Carrito-de-Compras">
-                <% productsInCart.forEach(product => { %>
-                    <article>
-                        <div class="contenedor-card">
-                            <div class="box-card">
-                                <h2 class="name"><%= product.nombre %></h2>
-                                <a href="#" class="buy">Comprar</a>
-                                <div class="circle"></div>
-                                <img src="<%= product.imagen %>" class="product" style="width: 150px">
-                            </div>
-                        </div>
-                    </article>
-                <% }); %>
-            </section>
-        </div>
+        <section id="Basado-en-tu-ultima-visita">
+                
+            <% productsInCart.forEach(product => { %>
+              <article>
+                <div class="contenedor-card">
+                  <div class="box-card">
+                    <h2 class="name"><%= product.producto.nombre %></h2>
+                    <a href="/products/<%= product.producto.id %>/detail?dataSet=product" class="buy">Ver Detalles</a>
+                    
+                    <div class="circle"></div>
+                    <img src="<%= product.producto.imagen %>" class="product" style="width: 150px">
+                  </div>
+                </div>
+                
+              </article>
+            <% }); %>
+            
     </main>
 
     <script src="https://unpkg.com/scrollreveal"></script>

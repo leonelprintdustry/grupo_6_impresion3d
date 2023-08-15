@@ -11,7 +11,9 @@
 
 body{
     background-color: #efefef;
-    background: url('/images/wallpaper6.jpg')no-repeat;
+    /*background: url('/images/wallpaper6.jpg')no-repeat;*/
+    
+    background-image: linear-gradient(135deg, #050306 20%, #560d91 100%);
 }
 
 .contenedor-cardDetail{
@@ -138,11 +140,11 @@ body{
 
 .shoe{
     position: absolute;
-    width: 140%;
+    width: 70%;
     opacity: 0;
     bottom: 0;
     right: 0;
-    transform: rotate(-20deg);
+    /*transform: rotate(-20deg);*/
     transition: .5s;
 }
 
@@ -344,7 +346,7 @@ body{
 
 @media (max-width: 1070px){
     .shoe{
-        width: 135%;
+        width: 67%;
     }
 }
 
@@ -356,15 +358,16 @@ body{
     }
     
     .card-detail > div{
-        width: 100%;
+        width: 78%;
         box-shadow: none;
     }
 
     .shoe{
-        width: 100%;
-        transform: rotate(-5deg) translateY(-50%);
-        top: 55%;
-        right: 2%;
+        width: 38%;
+        /*transform: rotate(-5deg) translateY(-50%);
+        top: 55%;*/
+        top: 10%;
+        right: 27%;
     }
 
     .nike{

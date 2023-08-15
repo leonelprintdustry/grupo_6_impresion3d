@@ -1,6 +1,6 @@
 const { Producto, Categoria, Color, Material, Carrito } = require('../database/models');
 const { check, validationResult } = require('express-validator');
-const { obtenerProductosEnCarritoDelUsuario } = require('../database/models/Carrito');
+//const { obtenerProductosEnCarritoDelUsuario } = require('../database/models/Carrito');
 
 const productController = {
     getIntro: (req, res) => {
@@ -32,15 +32,16 @@ const productController = {
     getProductCart: async (req, res) => {
         try {
             // obtener los productos en el carrito del usuario desde la base de datos
-            const productsInCart = await obtenerProductosEnCarritoDelUsuario(req.session.user.id);
+            const userId = req.session.user.id;
+            const productsInCart = await Carrito.obtenerProductosEnCarritoDelUsuario(userId);
             const userData = req.session.user; // obtenego los datos del usuario desde la sesión
             res.render('productCart', { productsInCart, userData });
         } catch (error) {
             console.error(error);
-            res.status(500).send('Error al obtener los productos en el carrito');
+            res.status(500).send('Error al obtener los productos en el carritoooooooo');
         }
     },
-    
+
 
     getProductDetail: async (req, res) => {
         try {
@@ -123,6 +124,9 @@ const productController = {
             const id = Number(req.params.id);
             const nuevosDatos = req.body;
 
+            if (req.files && req.files.length > 0) {
+                nuevosDatos.imagen = '/images/productos/' + req.files[0].filename;
+            }
             await Producto.update(nuevosDatos, {
                 where: { id }
             });
@@ -208,9 +212,8 @@ const productController = {
          
       addToCart: async (req, res) => {
         try {
-        const productId = Number(req.params.id);
-        const userId = req.session.user.id; // Obtener el ID del usuario desde la sesión
-
+            const productId = Number(req.params.id); // Obtén el ID del producto del formulario
+            const userId = req.session.user.id;
         // Busca el producto por su ID
         const product = await Producto.findByPk(productId);
 
@@ -223,7 +226,7 @@ const productController = {
         const precioTotal = product.precio * cantidad;
 
         // Crea un nuevo registro en la tabla del carrito
-        await Carrito.create({
+        const nuevoCarrito = await Carrito.create({
             cantidad,
             precio_total: precioTotal,
             usuario_id: userId,

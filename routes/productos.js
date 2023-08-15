@@ -36,7 +36,7 @@ router.get('/intro', productosController.getIntro);
 // GET /products/create
 router.get('/create', authMiddlewares.allowSignedIn, productosController.getCreate);
 
-router.post('/:id/delete', authMiddlewares.allowSignedIn, productosController.deleteProduct );
+router.get('/:id/delete', authMiddlewares.allowSignedIn, productosController.deleteProduct );
 
 router.get('/:id/detail', authMiddlewares.allowSignedIn, productosController.getProductDetail );
 
@@ -55,6 +55,7 @@ router.get(
 
 router.put(
   '/:id/edit',
+  upload.any('imagen'), 
   authMiddlewares.allowSignedIn,
   productosController.updateProduct
 );

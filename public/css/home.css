@@ -13,7 +13,9 @@ body{
     background: #131313;
     height: 100%;
     width: 90%;
-    background: url('/images/wallpaper6.jpg');
+   /*background: url('/images/wallpaper6.jpg');*/
+   
+   background-image: linear-gradient(135deg, #050306 20%, #560d91 100%);
   
 }
 
