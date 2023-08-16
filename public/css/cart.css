@@ -1,0 +1,20 @@
+.total-section {
+   background-image: linear-gradient(135deg, #d9d9d6 20%, #763ca5 100%);
+    color: rgb(6, 6, 6); 
+    padding-top: 5px;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.total-price {
+  color:rgb(200, 30, 30);
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.pay-button{
+ 
+    color: green;
+   
+}

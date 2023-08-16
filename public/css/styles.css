@@ -175,8 +175,7 @@ article:hover {
 
 @media (max-width: 720px) {
     .searchbar {
-        width: 41%;
-        height: 37px;
+        width: 43%;
         align-items: center;
         justify-content: center;
         text-align: center;

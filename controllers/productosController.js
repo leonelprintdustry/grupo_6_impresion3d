@@ -1,6 +1,9 @@
 const { Producto, Categoria, Color, Material, Carrito } = require('../database/models');
 const { check, validationResult } = require('express-validator');
 //const { obtenerProductosEnCarritoDelUsuario } = require('../database/models/Carrito');
+const sequelize = require('../database/config/database.json');
+const { Op } = require('sequelize');
+
 
 const productController = {
     getIntro: (req, res) => {
@@ -28,6 +31,13 @@ const productController = {
         res.status(500).send('Error al obtener los productos');
       }
     },
+    calculateTotalPrice: (productsInCart) => {
+        let total = 0;
+        productsInCart.forEach(product => {
+            total += parseFloat(product.producto.precio);
+        });
+        return total.toFixed(2); //redondear a 2 decimalels
+    },
 
     getProductCart: async (req, res) => {
         try {
@@ -35,7 +45,11 @@ const productController = {
             const userId = req.session.user.id;
             const productsInCart = await Carrito.obtenerProductosEnCarritoDelUsuario(userId);
             const userData = req.session.user; // obtenego los datos del usuario desde la sesión
-            res.render('productCart', { productsInCart, userData });
+            
+            // Calcular el precio total de los productos en el carrito
+            const totalPrecio = productController.calculateTotalPrice(productsInCart);
+            
+            res.render('productCart', { productsInCart, userData, totalPrecio });
         } catch (error) {
             console.error(error);
             res.status(500).send('Error al obtener los productos en el carritoooooooo');
@@ -242,7 +256,7 @@ const productController = {
 
 
 
-    getProducts: async (req, res) => {
+   /* getProducts: async (req, res) => {
         try {
             const searchTerm = req.query.q; // Obtener el término de búsqueda de la barra de búsqueda
 
@@ -256,13 +270,13 @@ const productController = {
             }
 
             // Si se ingresó un término de búsqueda, realiza la búsqueda utilizando el término
-            const productos = await Producto.findAll({
-                where: {
-                    name: {
-                        $like: `%${searchTerm}%`
-                    }
-                }
-            });
+            //const productos = await Producto.findAll({
+              //  where: {
+                //    name: {
+                  //      $like: `%${searchTerm}%`
+                    //}
+                //}
+            //});
 
             res.render('index', {
                 title: 'Productos',
@@ -273,7 +287,38 @@ const productController = {
             console.error(error);
             res.status(500).send('Error al obtener los productos');
         }
-    }
+    },*/
+    getProductBySearch: async (req, res) => {
+        try {
+            const searchTerm = req.query.q; // Obtén el término de búsqueda del parámetro de consulta
+    
+            if (!searchTerm) {
+                return res.redirect('/products/index'); // Redirige a la página principal de productos si no se proporciona un término de búsqueda
+            }
+    
+            const productos = await Producto.findAll({
+                where: {
+                    nombre: {
+                        [Op.like]: `%${searchTerm}%`,
+                    
+                    },
+                    activo: true
+                }
+            });
+    
+            const userData = req.session.user;
+            res.render('searchResults', {
+                title: 'Resultados de busqueda',
+                productos,
+                searchTerm,
+                userData
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al buscar los productos');
+        }
+    },
+
 };
 
 module.exports = productController;

@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // GET /products (GET)
-router.get('/', productosController.getProducts);
+//outer.get('/', productosController.getProducts);
 
 // POST ruta /products
 router.post(
@@ -46,6 +46,7 @@ router.get('/:id/update', authMiddlewares.allowSignedIn,productosController.getU
 
 router.get('/:id/addToCart', authMiddlewares.allowSignedIn, productosController.addToCart);
 
+router.get('/search', authMiddlewares.allowSignedIn, productosController.getProductBySearch);
 
 router.get(
   '/:id/edit',

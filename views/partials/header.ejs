@@ -5,9 +5,9 @@
 </div>
 
 <div class="searchbar">
-    <form action="/products" method="get">
-        <input type="text" name="q" placeholder="Buscar productos, marca y más" value="<%= searchTerm %>">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <form action="/products/search" method="get">
+        <input type="text" name="q" placeholder="Buscar productos, marca y más">
+        <button type="submit">Buscar<i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 </div>
 

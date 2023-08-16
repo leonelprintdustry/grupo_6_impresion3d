@@ -5,8 +5,10 @@
 </div>
     
     <div class="searchbar">
-        <input type="text" placeholder="Buscar productos, marca y mas">
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <form action="/products/search" method="get">
+            <input type="text" name="q" placeholder="Buscar productos, marca y más">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
     </div>
             
 

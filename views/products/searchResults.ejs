@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('../partials/head') %>
+    
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Resultados de búsqueda</title>
+
+</head>
+<body>
+    <header>
+        
+        <%- include('../partials/header3') %>
+        
+    </header>
+
+    <main>
+        <nav>
+            <% if (userData && userData.username) { %>
+                <form action="/users/sign-out" method="get">
+                    <input type="submit" value="cerrar sesion">
+                </form>
+            <% } %>
+            <% if (userData && userData.nombre) { %>
+                <h1><%= userData.nombre %></h1>
+            <% } %>
+            <% if (userData && userData.email) { %>
+                <h1><%= userData.email %></h1>
+            <% } %>
+        </nav>
+        
+     
+        <div class="Productos">
+            <h3>Resultados de búsqueda para "<%= searchTerm %>"</h3>
+           
+            <section id="Resultados-de-busqueda">
+              <% productos.forEach(product => { %>
+                <article>
+                  <div class="contenedor-card" onclick="window.location.href='/products/<%= product.id %>/detail?dataSet=product'">
+                    <div class="box-card">
+                      <h2 class="name"><%= product.nombre %></h2>
+                      <a href="#" class="buy">Comprar</a>
+                      <div class="circle"></div>
+                      <img src="<%= product.imagen %>" class="product" style="width: 150px">
+                    </div>
+                  </div>
+                  
+                </article>
+              <% }); %>
+
+              
+            </section>
+            
+
+        
+
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="/users/script.js"></script>
+
+    <script src="/users/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".box-card"),{
+            max: 25,
+            speed: 400
+        });
+    </script>
+    <footer>
+
+        <%- include('../partials/footer') %>
+        
+    </footer>
+
+</body>
+</html>

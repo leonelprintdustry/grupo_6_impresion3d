@@ -4,6 +4,7 @@
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="/css/cart.css"> 
 </head>
 <body>
     <header>
@@ -25,7 +26,18 @@
             <% } %>
         </nav>
         <section id="Basado-en-tu-ultima-visita">
-                
+            <div class="total-section">
+                <h3>Precios:</h3>
+                <% productsInCart.forEach(product => { %>
+                    <div class="product-price">
+                        <p><%= product.producto.nombre %>: <i class="fas fa-dollar-sign"></i> <%= parseFloat(product.producto.precio).toFixed(2) %></p>
+                    </div>
+                <% }); %>
+                <div class="total-price">
+                    <h4>Precio Total: <i class="fas fa-dollar-sign"></i> <%= totalPrecio%></h4>
+                </div>
+                <a href="/checkout" class="pay-button">Pagar</a>
+            </div>
             <% productsInCart.forEach(product => { %>
               <article>
                 <div class="contenedor-card">
@@ -40,7 +52,8 @@
                 
               </article>
             <% }); %>
-            
+          
+        </section>
     </main>
 
     <script src="https://unpkg.com/scrollreveal"></script>
