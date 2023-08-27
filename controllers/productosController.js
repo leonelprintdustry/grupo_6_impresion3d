@@ -5,6 +5,7 @@ const sequelize = require('../database/config/database.json');
 const { Op } = require('sequelize');
 
 
+
 const productController = {
     getIntro: (req, res) => {
         res.render('intro', { title: 'Print-Dustry' });
@@ -25,7 +26,11 @@ const productController = {
           where: { activo: true }, // Filtrar solo productos activos
         });
         const userData = req.session.user;
-        res.render('index', { title: 'Home', productos, userData: userData });
+
+        
+        
+
+        res.render('index', { title: 'Home', productos, userData: userData});
       } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener los productos');
@@ -66,12 +71,45 @@ const productController = {
                 return res.send('Error de id');
             }
 
-            res.render('productDetail', { product: productAMostrar });
+            const colores = await Color.findAll(); 
+            const materiales = await Material.findAll(); 
+            const categorias = await Categoria.findAll(); 
+
+
+            res.render('productDetail', { product: productAMostrar, colores, materiales, categorias });
         } catch (error) {
             console.error(error);
             res.status(500).send('Error al obtener el detalle del producto');
         }
     },
+    eliminarDelCarrito: async (req, res) => {
+        try {
+            const carritoId = Number(req.params.id); // Obtén el ID del producto en el carrito a eliminar
+            
+            // Antes de eliminar el carrito, elimina los registros relacionados en la tabla productos_carrito_de_compras
+            await sequelize.query('DELETE FROM productos_carrito_de_compras WHERE carrito_de_compras_id = ?', {
+                replacements: [carritoId],
+                type: sequelize.QueryTypes.DELETE
+            });
+    
+            // Elimina el carrito de compras
+            const resultado = await Carrito.destroy({
+                where: { id: carritoId }
+            });
+    
+            if (resultado === 1) {
+                res.redirect('/products/productCart'); // Redirige a la página del carrito después de eliminar
+            } else {
+                res.status(404).send('Producto en carrito no encontrado');
+            }
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al eliminar producto del carrito');
+        }
+    },
+    
+    
+    
 
     getUpdate: async (req, res) => {
       try {
@@ -141,6 +179,9 @@ const productController = {
             if (req.files && req.files.length > 0) {
                 nuevosDatos.imagen = '/images/productos/' + req.files[0].filename;
             }
+
+            nuevosDatos.nombre_color = req.body.nombre_color;
+
             await Producto.update(nuevosDatos, {
                 where: { id }
             });
@@ -318,6 +359,8 @@ const productController = {
             res.status(500).send('Error al buscar los productos');
         }
     },
+ 
+    
 
 };
 

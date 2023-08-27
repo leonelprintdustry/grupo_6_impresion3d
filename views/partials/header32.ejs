@@ -1,16 +1,3 @@
-<nav>
-    <% if (userData && userData.username) { %>
-        <form action="/users/sign-out" method="get">
-            <input type="submit" value="cerrar sesion">
-        </form>
-    <% } %>
-    <% if (userData && userData.nombre) { %>
-        <p class="bienvenida">Hola <%= userData.nombre %>!</h1>
-    <% } %>
-  
-</nav>
-
-
 
 <div class="main-header">
     <div class="main-header-mobile">
@@ -34,7 +21,5 @@
         <li><a href="/users/login"> Ingresa</a></li>
         <li><a href="/products/index"> Productos</a></li>
     </ul>
-</div>   
-
-
+</div>  
 

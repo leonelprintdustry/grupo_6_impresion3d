@@ -3,8 +3,11 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Carrito de Compras</title>
+    <title>Mi Carrito</title>
     <link rel="stylesheet" href="/css/cart.css"> 
+    <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 <body>
     <header>
@@ -19,43 +22,90 @@
                 </form>
             <% } %>
             <% if (userData && userData.nombre) { %>
-                <h1><%= userData.nombre %></h1>
+                <h1><%= userData.nombre %> Estos son los productos de tu carrito:</h1>
             <% } %>
-            <% if (userData && userData.email) { %>
-                <h1><%= userData.email %></h1>
-            <% } %>
+          
         </nav>
-        <section id="Basado-en-tu-ultima-visita">
-            <div class="total-section">
+        <div id="Basado-en-tu-ultima-visitare">
+            <div class="product-infototal">
                 <h3>Precios:</h3>
+                <div class="product-prices">
                 <% productsInCart.forEach(product => { %>
                     <div class="product-price">
-                        <p><%= product.producto.nombre %>: <i class="fas fa-dollar-sign"></i> <%= parseFloat(product.producto.precio).toFixed(2) %></p>
+                        <p><%= product.producto.nombre %>: $:</i> <%= parseFloat(product.producto.precio).toFixed(2) %></p>
                     </div>
-                <% }); %>
-                <div class="total-price">
-                    <h4>Precio Total: <i class="fas fa-dollar-sign"></i> <%= totalPrecio%></h4>
+                    <% }); %>
                 </div>
-                <a href="/checkout" class="pay-button">Pagar</a>
+                        <div class="pay-button">
+                            <div class="preciototal">
+                                <h4>Precio Total: $:
+                            <i><%= totalPrecio%></i></h4>
+                            </div>
+                        <a href="/checkout" class="pagar">Pagar</a>
+                    </div>
             </div>
-            <% productsInCart.forEach(product => { %>
-              <article>
-                <div class="contenedor-card">
-                  <div class="box-card">
-                    <h2 class="name"><%= product.producto.nombre %></h2>
-                    <a href="/products/<%= product.producto.id %>/detail?dataSet=product" class="buy">Ver Detalles</a>
+            <div id="Basado-en-tu-ultima-visitaere">
+                <% productsInCart.forEach(product => { %>
+                <div class="product-card">
+                    <div class="logo-cart">
+                        <img src="/images/Logo-sin-fondo.png" alt="loco">
+                       
+                        <button>
+                            <a href="/products/<%= product.producto.id %>/eliminarDelCarrito"> <i class='bx bx-x-circle'></i></a>
+                        </button>
+    
+                    </div>  
+                  <div class="main-imagesaff">
+                      <img src="<%= product.producto.imagen %>" class="product" style="width: 150px">
+                    </div>
+                    <div class="show-details">
+                        <h2 class="shoe-name"><%= product.producto.nombre %></h2>
+                        <h2 class="shoe-name"><%= product.producto.descripcion %></h2>
+                    </div>
+                    <div class="color-price">
+                    <div class="price">
+                        <span class="price_num">
+                           <h3>Precio: <%= product.producto.precio %></h3>
+                         </span>
+                    </div>
+                    </div>
+                    <div class="button">
+                        <div class="button-layer">
+                            <button>
+
+                                <a href="/products/<%= product.producto.id %>/detail?dataSet=product">Ver Detalles</a>
+                            </button>
+                         </div>
+                        </div>
+                   
+
+
                     
-                    <div class="circle"></div>
-                    <img src="<%= product.producto.imagen %>" class="product" style="width: 150px">
-                  </div>
+                    
                 </div>
+                    
+                    
                 
-              </article>
-            <% }); %>
+                
+                <% }); %>
+            </div>
           
-        </section>
+        </div>
     </main>
 
+    <script>
+        let circle = document.querySelector(".color-option");
+     
+        circle.addEventListener("click", (e)=>{
+          let target = e.target;
+          if(target.classList.contains("circle")){
+            circle.querySelector(".active").classList.remove("active");
+            target.classList.add("active");
+            document.querySelector(".main-images .active").classList.remove("active");
+            document.querySelector(`.main-images .${target.id}`).classList.add("active");
+          }
+        });
+       </script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="/users/script.js"></script>
     <script src="/users/vanilla-tilt.min.js"></script>

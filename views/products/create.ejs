@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Crear un producto</title>
+    <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
 </head>
 <body>
     <header>
        
-        <%- include('../partials/header3') %>
+        <%- include('../partials/header32') %>
        
     </header>
 
@@ -49,10 +50,7 @@
                     <input type="number" value="<%= values.price %>" name="precio" id="" class="control" placeholder="Coloca el precio del producto aqui">
                     <br>
                     <br>
-            <label for="">Descuento:</label>
-            <input type="text" name="discount" id="disocunt" class="control" placeholder="Agrega un descuento a tu producto">
-            <br>
-            <br>
+            
             <label for="">Categoria:</label>
             <select name="nombre_categoria" id="categoria" class="control">
                 <option value="" disabled selected>Selecciona una categoría</option>

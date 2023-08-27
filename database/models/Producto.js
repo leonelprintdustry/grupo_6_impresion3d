@@ -68,6 +68,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'usuario_id'
       });
     };
+
   
     return Producto;
   };

@@ -3,10 +3,12 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/update.css"> 
+    <title>Edita tu Producto</title>
+    <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
 </head>
 <body>
     <header>
-        <%- include('../partials/header3') %>
+        <%- include('../partials/header32') %>
     </header>
     <main>
         <div class="producto">
@@ -20,10 +22,7 @@
             <input type="text" name="precio" value="<%= productoAModificar.precio %>" id="">
             <br>
             <br>
-            <label for="">Descuento:</label>
-            <input type="text" name="discount" value="<%= productoAModificar.discount %>" id="">
-            <br>
-            <br>
+           
             <label for="">Material:</label>
             <select name="nombre_material" id="material" class="control">
                 <option value="" disabled>Selecciona un material</option>

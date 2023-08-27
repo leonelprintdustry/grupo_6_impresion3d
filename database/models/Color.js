@@ -8,8 +8,14 @@ module.exports = (sequelize, DataTypes) => {
         nombre: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        codigo: {
+            type: DataTypes.STRING, // Almacena el código hexadecimal del color
+            allowNull: false
         }
-    }, {
+    },
+
+     {
         tableName: 'colores',
         timestamps: false
     });
