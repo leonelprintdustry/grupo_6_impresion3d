@@ -24,6 +24,8 @@ const upload = multer({ storage: storage });
 
 const productRouter = require('./routes/productos');
 const userRouter = require('./routes/userRoutes');
+const userApiRoutes = require('./routes/userApiRoutes');
+const productApiRoutes = require('./routes/productApiRoutes');
 const app = express();
 
 
@@ -85,6 +87,9 @@ app.get('/prueba', async (req, res) => {
 //app.use('/main', mainRouter);
 app.use('/products', productRouter);
 app.use('/users', userRouter);
+app.use('/api', userApiRoutes);
+app.use('/api2', productApiRoutes);
+
 
 
 
