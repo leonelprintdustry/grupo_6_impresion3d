@@ -18,7 +18,7 @@ const productApiController = {
               {
                 model: Color,
                 as: 'color',
-                attributes: ['nombre'] // Especifica las columnas que deseas incluir de la tabla de Color
+                attributes: ['nombre'] 
               }
             ],
             where: { activo: true },
@@ -37,7 +37,7 @@ const productApiController = {
       const countByCategoryAndColor = {};
       productos.forEach(producto => {
         const categoria = producto.categoria.nombre;
-        const color = producto.color.nombre; // Reemplaza 'nombre' con el nombre real de la columna de color
+        const color = producto.color.nombre; 
 
         if (!countByCategoryAndColor[categoria]) {
           countByCategoryAndColor[categoria] = {};
@@ -133,7 +133,7 @@ const productApiController = {
     }
   },
   getUltimoProducto: async (req, res) => {
-    try {
+  
       const ultimoProducto = await Producto.findOne({
         order: [['createdAt', 'DESC']], // Ordenar por fecha de creación descendente para obtener el último producto
       });
@@ -143,10 +143,7 @@ const productApiController = {
       }
   
       res.json(ultimoProducto);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error al obtener el último producto.' });
-    }
+ 
   },
   
 

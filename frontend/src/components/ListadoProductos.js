@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './style.css'
 
 function ListadoProductos() {
   const [productos, setProductos] = useState([]);
@@ -37,32 +39,73 @@ function ListadoProductos() {
   }
 
   return (
+    <div>
+      <section className="sidebar">
+        <Link to="/" className="brand">
+          <i className="bx bxs-smile"></i>
+          <span className="text">Print-Dustry</span>
+        </Link>
+        <ul className="side-menu top">
+          <li className="active">
+            <Link to="/">
+              <i className="bx bxs-dashboard"></i>
+              <span className="text">Todo</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <i className="bx bxs-shopping-bag-alt"></i>
+              <span className="text">Productos</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <i className="bx bxs-doughnut-chart"></i>
+              <span className="text">Usuarios</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <i className="bx bxs-message-dots"></i>
+              <span className="text">Panel Categorias</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/">
+              <i className="bx bxs-group"></i>
+              <span className="text">Ultimos Productos</span>
+            </Link>
+          </li>
+        </ul>
+        <ul className="side-menu">
+          <li>
+            <Link to="/" className="logout">
+              <i className="bx bxs-log-out-circle"></i>
+              <span className="text">Cerrar Sesion</span>
+            </Link>
+          </li>
+        </ul>
+      </section>
+      <section className="content">
+      
     <div className="listado-productos">
       <h2>Listado de Productos</h2>
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Categoría</th>
-            <th>Color</th>
-          
-          </tr>
-        </thead>
         <tbody>
           {productos.map((producto) => (
-            <tr key={producto.id}>
-              <td>{producto.id}</td>
-              <td>{producto.name}</td>
-              <td>{producto.description}</td>
-              <td>{producto.category}</td>
-              <td>{producto.color}</td>
+            <li key={producto.id}>
+              <h4>ID: {producto.id}</h4>
+              <h4>NOMBRE: {producto.name}</h4>
+              <h4>DESCRIPCION: {producto.description}</h4>
+              <h4>CATEGORIA: {producto.category}</h4>
+              <h4>COLOR: {producto.color}</h4>
              
-            </tr>
+            </li>
           ))}
         </tbody>
       </table>
+    </div>
+    </section>
     </div>
   );
 }
