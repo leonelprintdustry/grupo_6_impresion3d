@@ -1,4 +1,4 @@
-TRELLO para seguimiento: https://trello.com/b/Mu43Q07g/grupo-6-digital-house
+TRELLO para seguimiento: https://trelquilo.com/b/Mu43Q07g/grupo-6-digital-house
 
 Sprint 8: 
 

@@ -94,12 +94,22 @@
                           
                     </div>
                     
+                    <% if (userData && userData.id === product.usuario_id) { %>
                     <div class="buy-price">
                         <div class="buy">
                             <a href="/products/<%= product.id %>/delete" onclick="return confirmDelete();">Eliminar Producto</a>
                         </div>
                     </div>
                               
+                    <div class="buy-price">
+                        <div class="buy">
+                            <a href="/products/<%= product.id %>/update?dataSet=item">Editar producto</a>
+                            </a>
+                        </div>
+                    </div>
+
+                    <% } %>
+
                     <script>
                         function confirmDelete() {
                             return confirm('¿Estás seguro de que deseas eliminar este producto?');
@@ -109,12 +119,6 @@
                       
                   
                     
-                    <div class="buy-price">
-                        <div class="buy">
-                            <a href="/products/<%= product.id %>/update?dataSet=item">Editar producto</a>
-                            </a>
-                        </div>
-                    </div>
                     
                           
                 </div>

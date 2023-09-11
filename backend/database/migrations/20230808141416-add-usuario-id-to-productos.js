@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.addColumn('productos', 'usuario_id', {
       type: Sequelize.INTEGER,
       references: {
-        model: 'usuarios', // Tabla de usuarios
+        model: 'usuarios', 
         key: 'id',
       },
       onUpdate: 'CASCADE',

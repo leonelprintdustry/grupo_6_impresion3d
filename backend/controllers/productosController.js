@@ -1,8 +1,10 @@
-const { Producto, Categoria, Color, Material, Carrito } = require('../database/models');
+
+const { Producto, Categoria, Color, Material, Carrito, Usuario, ProductosCarritoDeCompras } = require('../database/models');
 const { check, validationResult } = require('express-validator');
 //const { obtenerProductosEnCarritoDelUsuario } = require('../database/models/Carrito');
 const sequelize = require('../database/config/database.json');
 const { Op } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 
 
@@ -36,6 +38,46 @@ const productController = {
         res.status(500).send('Error al obtener los productos');
       }
     },
+    eliminarDelCarrito: async (req, res) => {
+        try {
+            const carritoId = Number(req.params.id); // Obtén el ID del carrito a eliminar
+        
+            // Busca los registros en productos_carrito_de_compras relacionados con el carrito
+            const productosEnCarrito = await ProductosCarritoDeCompras.findAll({
+              where: {
+                carrito_de_compras_id: carritoId
+              }
+            });
+        
+            // Elimina los registros en productos_carrito_de_compras
+            await Promise.all(productosEnCarrito.map(async (producto) => {
+              await producto.destroy();
+            }));
+        
+            // Luego, elimina el registro en carrito_de_compras
+            const carrito = await Carrito.findOne({
+              where: {
+                id: carritoId,
+                usuario_id: req.session.user.id // Verifica que el usuario actual sea el propietario del carrito
+              }
+            });
+        
+            if (!carrito) {
+              // Si el carrito no existe, muestra un mensaje de error
+              res.status(404).send('Carrito no encontrado.');
+              return;
+            }
+        
+            // Elimina el registro en carrito_de_compras
+            await carrito.destroy();
+        
+            // Redirige al usuario a la página del carrito después de eliminar con éxito
+            res.redirect('/products/productCart');
+          } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al eliminar producto del carrito');
+          }
+          },
     calculateTotalPrice: (productsInCart) => {
         let total = 0;
         productsInCart.forEach(product => {
@@ -74,39 +116,15 @@ const productController = {
             const colores = await Color.findAll(); 
             const materiales = await Material.findAll(); 
             const categorias = await Categoria.findAll(); 
+            const userData = req.session.user; 
 
-
-            res.render('productDetail', { product: productAMostrar, colores, materiales, categorias });
+            res.render('productDetail', { product: productAMostrar, colores, materiales, categorias, userData });
         } catch (error) {
             console.error(error);
             res.status(500).send('Error al obtener el detalle del producto');
         }
     },
-    eliminarDelCarrito: async (req, res) => {
-        try {
-            const carritoId = Number(req.params.id); // Obtén el ID del producto en el carrito a eliminar
-            
-            // Antes de eliminar el carrito, elimina los registros relacionados en la tabla productos_carrito_de_compras
-            await sequelize.query('DELETE FROM productos_carrito_de_compras WHERE carrito_de_compras_id = ?', {
-                replacements: [carritoId],
-                type: sequelize.QueryTypes.DELETE
-            });
-    
-            // Elimina el carrito de compras
-            const resultado = await Carrito.destroy({
-                where: { id: carritoId }
-            });
-    
-            if (resultado === 1) {
-                res.redirect('/products/productCart'); // Redirige a la página del carrito después de eliminar
-            } else {
-                res.status(404).send('Producto en carrito no encontrado');
-            }
-        } catch (error) {
-            console.error(error);
-            res.status(500).send('Error al eliminar producto del carrito');
-        }
-    },
+   
     
     
     
@@ -175,12 +193,14 @@ const productController = {
         try {
             const id = Number(req.params.id);
             const nuevosDatos = req.body;
+            const userId = req.session.user.id;
 
             if (req.files && req.files.length > 0) {
                 nuevosDatos.imagen = '/images/productos/' + req.files[0].filename;
             }
 
             nuevosDatos.nombre_color = req.body.nombre_color;
+            nuevosDatos.usuario_id = userId;
 
             await Producto.update(nuevosDatos, {
                 where: { id }
@@ -222,7 +242,7 @@ const productController = {
             const validation = validationResult(req);
             if (!validation.isEmpty()) {
               const userData = req.session.user;
-              // Obtener las listas de categorías y colores desde la base de datos
+             // Obtener las listas de categorías y colores desde la base de datos
               const categorias = await Categoria.findAll();
               const colores = await Color.findAll();
               const materiales = await Material.findAll();
@@ -236,7 +256,7 @@ const productController = {
             datos.description = datos.description;
             datos.price = Number(datos.precio);
             datos.imagen = '/images/productos/' + req.files[0].filename;
-      
+            datos.usuario_id = userId;
 
 
             // Buscar el id de la categoría y el color basado en las palabras recibidas
@@ -257,7 +277,7 @@ const productController = {
       
             const productos = await Producto.findAll();
             const userData = req.session.user;
-            res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData });
+            res.render('index', { title: 'Productos', productos, errors: validation.errors, values: req.body, userData, userId });
           } catch (error) {
             console.error(error);
             res.status(500).send('Error al crear el producto');
@@ -359,10 +379,13 @@ const productController = {
             res.status(500).send('Error al buscar los productos');
         }
     },
+
+
+    
+    
  
     
 
 };
 
-module.exports = productController;  
-
+module.exports = productController; 
