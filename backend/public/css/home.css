@@ -139,17 +139,17 @@ body{
 }
 .contenedor-card .box-card:nth-child(1) .circle,
 .contenedor-card .box-card:nth-child(1) .buy {
-    background: #379bf7;
+    background: #416a91;
 }
 
 .contenedor-card .box-card:nth-child(2) .circle,
 .contenedor-card .box-card:nth-child(2) .buy {
-    background: #9bdc28;
+    background: #72992a;
 }
 
 .contenedor-card .box-card:nth-child(3) .circle,
 .contenedor-card .box-card:nth-child(3) .buy {
-    background: #fb4b4f;
+    background: #b92224;
 }
 
 @media (max-width: 600px) {
