@@ -49,7 +49,8 @@ const productController = {
               }
             });
         
-            // Elimina los registros en productos_carrito_de_compras
+            // Elimina los registros en productos_carrito_de_comprassssssssssssssssssssss
+            //asaksak
             await Promise.all(productosEnCarrito.map(async (producto) => {
               await producto.destroy();
             }));
