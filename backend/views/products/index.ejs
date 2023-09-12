@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <%- include('../partials/head') %>
-    
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Print-Dustry Argentina</title>
     <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    
-
-
 </head>
 <body>
     <header>
-    
         <%- include('../partials/header3') %>
-        
     </header>
-
     <main>
-      
-        
-     
         <div class="Productos">
-
-        <a href="/products/create" >Crear un nuevo producto <i class='bx bx-add-to-queue'></i></a>
-
-            <h3 >Basado en tu última visita</h3>
-           
+            <video id="videoBanner" autoplay loop muted>
+                <source src="/images/PRINT-DUSTRY.mp4" type="video/mp4">
+            </video>
+            <img id="imagenBanner" src="/images/banner.png" class="banner-content">
+            <a href="/products/create" >Crear un nuevo producto <i class='bx bx-add-to-queue'></i></a>
+            <div id="filtro">
+                <h3>Filtrar por:</h3>
+                <form action="/products/filtrar" method="GET"> <!-- Formulario para aplicar el filtro -->
+                    <select name="color">
+                        <option value="">Todos los colores</option>
+                        <% colores.forEach(color => { %>
+                            <option value="<%= color.nombre %>"><%= color.nombre %></option>
+                        <% }) %>
+                    </select>
+                    <select name="categoria">
+                        <option value="">Todas las categorías</option>
+                        <% categorias.forEach(categoria => { %>
+                            <option value="<%= categoria.nombre %>"><%= categoria.nombre %></option>
+                        <% }) %>
+                    </select>
+                    <button type="submit">Aplicar Filtro</button>
+                </form>
+            </div>
+            <h3>Basado en tu última visita</h3>
             <section id="Basado-en-tu-ultima-visita">
-              <% productos.forEach(product => { %>
-                <article>
-                  <div class="contenedor-card" onclick="window.location.href='/products/<%= product.id %>/detail?dataSet=product'">
-                   
-                    <div class="box-card">
-                      <h2 class="name"><%= product.nombre %></h2>
-                      <a href="#" class="buy">Comprar</a>
-                      <div class="circle"></div>
-                      <img src="<%= product.imagen %>" class="product" style="width: 150px">
-                    </div>
-                  </div>
-                  
-                </article>
-              <% }); %>
+                <% productos.forEach(product => { %>
+                    <article>
+                        <div class="contenedor-card" onclick="window.location.href='/products/<%= product.id %>/detail?dataSet=product'">
+                            <div class="box-card">
+                                <h2 class="name"><%= product.nombre %></h2>
+                                <a href="#" class="buy">Comprar</a>
+                                <div class="circle"></div>
+                                <img src="<%= product.imagen %>" class="product" style="width: 150px">
+                            </div>
+                        </div>
+                    </article>
+                <% }); %>
             </section>
-            
-
-        
-
+        </div>
     </main>
-
     <script src="https://unpkg.com/scrollreveal"></script>
-
     <script src="/users/script.js"></script>
-
     <script src="/users/vanilla-tilt.min.js"></script>
     <script>
-        VanillaTilt.init(document.querySelectorAll(".box-card"),{
+        VanillaTilt.init(document.querySelectorAll(".box-card"), {
             max: 25,
             speed: 400
         });
     </script>
+    <script>
+        // Función para alternar entre el video y la imagen
+        function alternarBanner() {
+            const videoBanner = document.getElementById('videoBanner');
+            const imagenBanner = document.getElementById('imagenBanner');
+            // Verificarmos cual elemento esta visible y ocultarlo
+            if (videoBanner.style.display !== 'none') {
+                videoBanner.style.display = 'none';
+                imagenBanner.style.display = 'block';
+            } else {
+                videoBanner.style.display = 'block';
+                imagenBanner.style.display = 'none';
+            }
+        }
+        // Cambiar el contenido cada 6 segundos
+        setInterval(alternarBanner, 6000); // 6000 milisegundos = 6 segundos
+    </script>
     <footer>
-
         <%- include('../partials/footer') %>
-        
     </footer>
-
 </body>
 </html>

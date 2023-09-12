@@ -243,9 +243,9 @@ section{
         top: 100%;
         right: -100%;
         width: 300px;
-        height: 45vh;
-        background: gray;
-        border: 2px solid rgba(255,255,255,0.5);
+        /*height: 45vh;*/
+        background: rgb(0, 0, 0);
+        border: 8px solid rgba(255, 255, 255, 0.852);
         display: flex;
         align-items: center;
         flex-direction: column;

@@ -29,10 +29,14 @@ const productController = {
         });
         const userData = req.session.user;
 
+        const colores = await Color.findAll();
+        const categorias = await Categoria.findAll();
+      
+
         
         
 
-        res.render('index', { title: 'Home', productos, userData: userData});
+        res.render('index', { title: 'Home', productos, userData: userData, colores, categorias});
       } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener los productos');
@@ -104,6 +108,36 @@ const productController = {
         }
     },
 
+    filtrarProductos: async (req, res) => {
+      try {
+        const filtroColor = req.query.color || '';
+        const filtroCategoria = req.query.categoria || '';
+    
+        // Crea un objeto de opciones de búsqueda
+        //const opcionesBusqueda = {
+          //activo: true, // Filtrar solo productos activos
+        //};
+    
+        // Agrega los filtros de color y categoría si se especifican
+        //if (filtroColor) {
+          //opcionesBusqueda.id_color = filtroColor;
+       // }
+        //if (filtroCategoria) {
+          //opcionesBusqueda.id_categoria = filtroCategoria;
+        //}
+    
+        // Realiza la búsqueda de productos con las opciones
+       // const productosFiltrados = await Producto.findAll({
+          //where: opcionesBusqueda,
+       // });
+    
+        res.redirect(`/productFiltered?color=${filtroColor}&categoria=${filtroCategoria}`);
+   
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al filtrar productos' });
+      }
+      },
 
     getProductDetail: async (req, res) => {
         try {

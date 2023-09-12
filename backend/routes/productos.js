@@ -65,6 +65,9 @@ router.get('/productCart', authMiddlewares.allowSignedIn, productosController.ge
 
 router.get('/eliminarDelCarrito/:id', authMiddlewares.allowSignedIn, productosController.eliminarDelCarrito);
 
+
+router.get('/filtrar', productosController.filtrarProductos);
+
 // Exportar el router
 module.exports = router;
 

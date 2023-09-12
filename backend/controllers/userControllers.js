@@ -32,8 +32,7 @@ const controllers = {
         const newConfirmPassword = bcrypt.hashSync(user.controlpassword, 12);
         user.controlpassword = newConfirmPassword;
     
-        user.imagen = '/images/users/' + req.files[0].filename;
-    
+        
         Usuario.create(user)
           .then(() => {
             res.redirect('/products/index');

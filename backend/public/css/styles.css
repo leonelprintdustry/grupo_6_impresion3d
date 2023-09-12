@@ -6,7 +6,7 @@
 header {
     /*background-image: linear-gradient(135deg, #7091b7 30%, #3d1ec4 100%);*/
     /*background: url('/images/Page 4.png') no-repeat;*/
-    background-image: linear-gradient(135deg, #4620d0 30%, #000000 100%);
+    background-image: linear-gradient(135deg, #000000 30%, #000000 100%);
     text-align: center;
     position: fixed;
     top: 0;
@@ -21,6 +21,22 @@ body {
     background-image: linear-gradient(135deg, #4620d0 30%, #8c8c8c 100%);
     /*background-color: #007CFA;*/
     color: #ebebeb;
+}
+
+.banner-content {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: none;
+    height: 600px;
+
+}
+video {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    height: 600px;
 }
 
 a {
@@ -56,7 +72,7 @@ footer {
     width: 100%;
     background: rgb(205, 205, 205);
     background-color: #0026fa;*/
-    background-image: linear-gradient(135deg, #4115df 30%, #040404 100%);
+    background-image: linear-gradient(135deg, #000000 30%, #040404 100%);
     padding-bottom: 20px;
     padding-top: 20px;
     width: 100%;
@@ -249,10 +265,18 @@ article:hover {
         align-items: center;
         width: 37vw;
     }
+    
 }
 
 @media (max-width: 720px) {
-   
+    
+    .banner-content{
+        margin: auto;
+    }
+    video{
+        margin: -120px auto;
+    }
+    
     footer {
         flex-direction: column;
         align-items: center;
@@ -307,8 +331,7 @@ article:hover {
       /*
       background: url('/images/Page 4.png');
       */
-      background-image: linear-gradient(135deg, #14051c 20%, #2733d5eb 100%);
-      
+      background-image: linear-gradient(135deg, #292929 20%, #b8bdffeb 100%);
     
   }
   
@@ -433,7 +456,7 @@ article:hover {
   }
   .contenedor-card .box-card:nth-child(1) .circle,
   .contenedor-card .box-card:nth-child(1) .buy {
-      background: #ff0000;
+      background: #0050b2;
   }
   
   .contenedor-card .box-card:nth-child(2) .circle,

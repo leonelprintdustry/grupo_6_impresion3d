@@ -24,8 +24,8 @@
 }
 
 .product-price {
-  font-size: 16px;
-  color: #040404;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .button button:hover {
@@ -37,7 +37,7 @@
 #Basado-en-tu-ultima-visitaere {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; 
+  /*gap: 10px;*/ 
 }
 
 
@@ -55,7 +55,7 @@
  
   transform-style: preserve-3d;
  
-  background-image: linear-gradient(135deg,#10008a, #b9b9b9 );
+  background-image: linear-gradient(135deg,#ffffff, #b9b9b9 );
 
   padding: 10px 25px;
   height: 100%;
@@ -80,9 +80,9 @@
 .product-infototal{
   position: relative;
   /* max-width: 455px; */
-  border-radius: 25px;
+  
   padding: 20px 30px 30px 30px;
-  background-image: linear-gradient(135deg,#adadad, #1d0fe7 );
+  background-image: linear-gradient(135deg,#000000, #000000 );
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   z-index: 3;
   overflow: hidden;
@@ -91,7 +91,7 @@
   margin-bottom: 22px;
   margin-left: 22px;
   margin-right: 22px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-size: 15px;
 }
 h4 {
@@ -104,11 +104,11 @@ h4 {
 .pagar {
   font-size: 20px;
   position: absolute;
-    height: 20%;
+    height: 27%;
     width: 50%;
     left: 25%;
-    top: 50%;
-    background-image: linear-gradient(135deg,#0b0bca, #0d7ca8 );
+    top: 61%;
+    background-image: linear-gradient(135deg,#000000, #000000 );
     transition: all 0.4s ease;
     border-radius: 25px;
     text-align: center;
@@ -117,16 +117,16 @@ h4 {
    
     font-weight: 600;
     letter-spacing: 1px;
-    color: #fff;
+    color: #ffffff;
 
 }
 .product-card {
   position: relative;
-  max-width: 330px;
+  max-width: 30%;
 
   border-radius: 25px;
   padding: 20px 30px 30px 30px;
-  background:#2d389a;
+  background:#888888;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   z-index: 3;
   overflow: hidden;
@@ -138,7 +138,12 @@ h4 {
   
 
 }
-
+.shoe-name {
+  color: black;
+}
+.buy {
+  color: black;
+}
 .price_num {
   font-size: 20px;
 }
@@ -253,7 +258,7 @@ h4 {
 .color-price .price .price_num{
   font-size: 25px;
   font-weight: 600;
-  color: #707070;
+  color: #000000;
 }
 .color-price .price .price_letter{
   font-size: 10px;
@@ -269,12 +274,16 @@ h4 {
   margin-top: 30px;
   overflow: hidden;
 }
+
+.main-imagesaff {
+  text-align: center;
+}
 .product-card .button .button-layer{
   position: absolute;
   height: 100%;
   width: 300%;
   left: -100%;
-  background-image: linear-gradient(135deg,#9708CC, #43CBFF,#9708CC, #43CBFF );
+  background-image: linear-gradient(135deg,#000000, #43CBFF,#000000, #000000 );
   transition: all 0.4s ease;
   border-radius: 25px;
   text-align: center;
@@ -301,9 +310,7 @@ h4 {
     
     padding-left: 14px;
   }
-  #Basado-en-tu-ultima-visitaere{
-    padding-left: 18px;
-  }
+ 
 }
 
 
@@ -316,16 +323,27 @@ h4 {
     @media (max-width: 700px) {
     .product-card {
       position: relative;
-      max-width: 133%;
+      max-width: 68%;
       border-radius: 25px;
       padding: 20px 30px 30px 30px;
-      background: #9a2d2d;
+      background: #8c8c8c;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       z-index: 3;
       overflow: hidden;
       display: flex;
+      margin: 0 auto;
       /* flex-direction: column; */
       margin-top: 6px;
       /* margin-left: 2%;*/
+    }
+    .product-infototal{
+    padding: 76px 30px 30px 30px;
+    
+  }
+}
+  @media (max-width: 800px) {
+    .preciototal{
+      margin-top: -19px;
+      font-size: 15px;
     }
   }
