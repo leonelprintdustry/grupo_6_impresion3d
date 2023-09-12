@@ -6,6 +6,8 @@
     <title>Print-Dustry Argentina</title>
     <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/button.css">
+    
 </head>
 <body>
     <header>
@@ -19,18 +21,20 @@
             <img id="imagenBanner" src="/images/banner.png" class="banner-content">
             <a href="/products/create" >Vender un Producto <i class='bx bx-add-to-queue'></i></a>
             <div id="filtro">
-                <h3>Filtrar por:</h3>
+            <h3>FILTRAR POR: 
+            </h3>
+            <br>
                 <form action="/products/productFiltered" method="GET">
-                    <select name="color">
-                        <option value="">Todos los colores</option>
+                    <select name="color" class="filtro-select">
+                       <option value="" class="filtro-select">Todos los colores</option>
                         <% colores.forEach(color => { %>
-                            <option value="<%= color.nombre %>"><%= color.nombre %></option>
+                            <option value="<%= color.nombre %>" class="filtro-select"><%= color.nombre %></option>
                         <% }) %>
                     </select>
-                    <select name="categoria">
-                        <option value="">Todas las categorías</option>
+                    <select name="categoria" class="filtro-select">
+                        <option value="" class="filtro-option">Todas las categorías</option>
                         <% categorias.forEach(categoria => { %>
-                            <option value="<%= categoria.nombre %>"><%= categoria.nombre %></option>
+                            <option value="<%= categoria.nombre %>" class="filtro-option"><%= categoria.nombre %></option>
                         <% }) %>
                     </select>
                     <button type="submit">Aplicar Filtro</button>
@@ -79,6 +83,26 @@
         // Cambiar el contenido cada 6 segundos
         setInterval(alternarBanner, 6000); // 6000 milisegundos = 6 segundos
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const selectElements = document.querySelectorAll(".filtro-select");
+    
+            selectElements.forEach(function (selectElement) {
+                selectElement.addEventListener("change", function () {
+                    // Remueve la clase 'seleccionada' de todas las opciones
+                    const allOptions = selectElement.querySelectorAll(".filtro-option");
+                    allOptions.forEach(function (option) {
+                        option.classList.remove("seleccionada");
+                    });
+    
+                    // Agrega la clase 'seleccionada' a la opción seleccionada
+                    const selectedOption = selectElement.options[selectElement.selectedIndex];
+                    selectedOption.classList.add("seleccionada");
+                });
+            });
+        });
+    </script>
+    
     <footer>
         <%- include('../partials/footer') %>
     </footer>

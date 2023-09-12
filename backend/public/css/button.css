@@ -1,0 +1,50 @@
+button {
+  
+    font-size: 15px;
+    color: white;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(245, 245, 245),
+    0 0 25px rgb(253, 255, 255);
+    margin-left: 10px;
+    }
+    button:hover {
+        transition: 0.5s;
+        box-shadow: 0 0 5px rgb(246, 246, 246),
+        0 0 25px rgb(6, 78, 211), 0 0 50px rgb(249, 255, 255),
+        0 0 100px rgb(0, 3, 172), 0 0 200px rgb(6, 18, 188);
+    }
+
+.filtro-select {
+    font-size: 12px;
+    color: white;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(245, 245, 245),
+    0 0 25px rgb(253, 255, 255);
+  
+    margin-left: 10px;
+}
+
+.filtro-option {
+    font-size: 12px;
+    color: white;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(245, 245, 245),
+    0 0 25px rgb(253, 255, 255);
+    margin-bottom: 10px;
+}
+
+
+.filtro-select:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 5px rgb(246, 246, 246),
+    0 0 25px rgb(255, 9, 70), 0 0 50px rgb(249, 255, 255),
+    0 0 100px rgb(255, 5, 55), 0 0 200px rgb(222, 0, 63);
+}
