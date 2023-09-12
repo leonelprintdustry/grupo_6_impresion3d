@@ -414,6 +414,53 @@ const productController = {
             res.status(500).send('Error al buscar los productos');
         }
     },
+    getProductFiltered: async (req, res) => {
+      try {
+        const filtroColor = req.query.color || '';
+        const filtroCategoria = req.query.categoria || '';
+       
+         // Define los criterios de búsqueda basados en los filtros
+    const criteriosBusqueda = {
+      activo: true // Filtrar solo productos activos
+    };
+
+    if (filtroColor) {
+      criteriosBusqueda['$color.nombre$'] = filtroColor; // Usar el alias 'color'
+    }
+
+    if (filtroCategoria) {
+      criteriosBusqueda['$categoria.nombre$'] = filtroCategoria; // Usar el alias 'categoria'
+    }
+
+    const productosFiltrados = await Producto.findAll({
+      where: criteriosBusqueda,
+      include: [
+        {
+          model: Categoria,
+          as: 'categoria'
+        },
+        {
+          model: Color,
+          as: 'color'
+        }
+      ]
+    });
+
+    const product = productosFiltrados[0];
+   
+   
+          res.render('productFiltered', {  title: 'Productos Filtrados',
+          productosFiltrados,
+          filtroColor,
+          filtroCategoria,
+          userData: req.session.user,
+          product
+         });
+      } catch (error) {
+          console.error(error);
+          res.status(500).send('Error al obtener los productos filtrados');
+      }
+    },
 
 
     

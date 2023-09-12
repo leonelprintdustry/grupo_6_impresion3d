@@ -17,10 +17,10 @@
                 <source src="/images/PRINT-DUSTRY.mp4" type="video/mp4">
             </video>
             <img id="imagenBanner" src="/images/banner.png" class="banner-content">
-            <a href="/products/create" >Crear un nuevo producto <i class='bx bx-add-to-queue'></i></a>
+            <a href="/products/create" >Vender un Producto <i class='bx bx-add-to-queue'></i></a>
             <div id="filtro">
                 <h3>Filtrar por:</h3>
-                <form action="/products/filtrar" method="GET"> <!-- Formulario para aplicar el filtro -->
+                <form action="/products/productFiltered" method="GET">
                     <select name="color">
                         <option value="">Todos los colores</option>
                         <% colores.forEach(color => { %>
