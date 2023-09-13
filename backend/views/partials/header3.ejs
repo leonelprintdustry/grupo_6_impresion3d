@@ -4,8 +4,8 @@
             <input type="submit" value="cerrar sesion">
         </form>
     <% } %>
-    <% if (userData && userData.nombre) { %>
-        <p class="bienvenida">Hola <%= userData.nombre %>!</h1>
+    <% if (userData && userData.apellido) { %>
+        <p class="bienvenida">Hola <%= userData.apellido %>! <a href="/users/editUser/<%= userData.id %>"><i class='bx bx-edit-alt'></i></a></p>
     <% } %>
   
 </nav>

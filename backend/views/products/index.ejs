@@ -67,12 +67,10 @@
         });
     </script>
     <script>
-        // Función para alternar entre el video y la imagen
-        function alternarBanner() {
+       function alternarBanner() {
             const videoBanner = document.getElementById('videoBanner');
             const imagenBanner = document.getElementById('imagenBanner');
-            // Verificarmos cual elemento esta visible y ocultarlo
-            if (videoBanner.style.display !== 'none') {
+           if (videoBanner.style.display !== 'none') {
                 videoBanner.style.display = 'none';
                 imagenBanner.style.display = 'block';
             } else {
@@ -89,13 +87,11 @@
     
             selectElements.forEach(function (selectElement) {
                 selectElement.addEventListener("change", function () {
-                    // Remueve la clase 'seleccionada' de todas las opciones
                     const allOptions = selectElement.querySelectorAll(".filtro-option");
                     allOptions.forEach(function (option) {
                         option.classList.remove("seleccionada");
                     });
     
-                    // Agrega la clase 'seleccionada' a la opción seleccionada
                     const selectedOption = selectElement.options[selectElement.selectedIndex];
                     selectedOption.classList.add("seleccionada");
                 });

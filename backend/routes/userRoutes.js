@@ -34,4 +34,11 @@ router.get('/login', controllers.getLogin);
 //@GET - /users
 router.post('/login', controllers.loginUser);
 
+// Ruta para mostrar el formulario de edición de usuario
+router.get('/editUser/:userId', controllers.getEditUser);
+
+// Ruta para procesar la actualización de los datos del usuario
+router.post('/editUser/:userId', controllers.postEditUser);
+
+
 module.exports = router;

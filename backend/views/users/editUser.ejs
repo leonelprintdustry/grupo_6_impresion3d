@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Edita tu usuario</title>
+    <link rel="shortcut icon" href="/images/Logo-sin-fondo.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/button.css">
+    
+</head>
+<body>
+    <header>
+        <%- include('../partials/header3') %>
+    </header>
+    <main>
+        <form action="/users/editUser/<%= user.id %>" method="POST">
+            <div class="control-formulario">
+            <div class="control-formulario">
+                <label for="nombreCompleto" class="texto-nombre">Nombre y Apellido</label>
+                <input type="text" name="nombre" class="control" placeholder="Nombre y Apellido" id="nombreCompleto" pattern=".{2,}" required value="<%= user.nombre %>">
+                <span class="error">Ingrese un nombre válido (al menos 2 caracteres)</span>            
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Nombre de usuario</label>
+                <input type="text" name="apellido" class="control" placeholder="Nombre de usuario" pattern="[a-zA-Z]{5,}" required value="<%= user.apellido %>">
+                <span class="error">Ingrese un nombre de usuario válido (al menos cinco caracteres)</span>    
+            </div>
+            <div class="control-formulario">
+                <label for="email" class="texto">Email</label>
+                <input type="email" name="email" class="control" placeholder="E-mail" required value="<%= user.email %>">
+                <span class="error">Ingrese un email</span>  
+                <% if (error === 'El correo electrónico ya está registrado') { %>
+                    <p class="error-message"><%= error %></p>
+                <% } %> 
+            </div>
+            <div class="control-formulario">
+                <label class="texto">Edad:</label>
+                <input type="number" name="edad" class="control" placeholder="Edad" required value="<%= user.edad %>">
+            </div>
+            <div class="control-formulario">
+                <label for="" class="texto">Password</label>
+                <input type="password" name="password" class="control" placeholder="Contraseña"  pattern="{8,}" required value="<%= user.password %>">           
+                <span class="error">Ingrese una contaseña valida (al menos 8 caracteres)</span>  
+                  
+            </div>
+            <button type="submit" class="control">Guardar Cambios</button>
+        </div>
+        </form>
+        
+    </main>
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>
